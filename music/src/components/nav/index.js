@@ -1,6 +1,6 @@
 import React from 'react'
 import router from "../../router";
-import {Route ,NavLink } from '_react-router-dom@5.0.1@react-router-dom'
+import {Route ,NavLink } from 'react-router-dom'
 
 export default class Nav extends React.Component{
 	render() {
