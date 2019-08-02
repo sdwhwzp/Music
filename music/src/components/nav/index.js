@@ -18,7 +18,7 @@ export default class Nav extends React.Component{
 					return (
 
 						<span key={i} className={'nav'} >
-								<NavLink exact={v.exact} style={{color:'gray'}} activeStyle={{color:"green"}} to={v.to}><i className={"icon iconfont "+" "+v.iconfont}></i>{v.context}</NavLink>
+							{v.meta.isfooter?<NavLink exact={v.exact} style={{color:'gray'}} activeStyle={{color:"green"}} to={v.to} {...this.props}><i className={"icon iconfont "+" "+v.iconfont}></i>{v.context}</NavLink>:null}
 							</span>
 					)
 				})}
