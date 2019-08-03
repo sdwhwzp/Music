@@ -8,16 +8,11 @@ module.exports = function (app) {
 		}
 	}))
     app.use("/qq",proxy({
-        target:"https://c.y.qq.com/v8/fcg-bin",
+        target:"https://c.y.qq.com",
         changeOrigin:true,
         pathRewrite:{
             "^/qq":""
         }
     }))
-    // app.get("/xixi",function (req,res) {
-    //     console.log(2222222222);
-    //     res.json({
-    //         ok:1
-    //     })
-    // })
+
 }
