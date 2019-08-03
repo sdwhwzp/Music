@@ -1,0 +1,47 @@
+footer{
+    position:fixed;
+    bottom: 0;
+    height: 8%;
+    width: 100%;
+    background: white;
+}
+footer .nav{
+    display: none;
+    font-size: 20px;
+
+}
+footer span:nth-child(1){
+    position: absolute;
+    left: 8%;
+    display: block;
+}
+footer span:nth-child(2){
+    position: absolute;
+    left: 48%;
+    display: block;
+}
+footer span:nth-child(3){
+    position: absolute;
+    right: 10%;
+    display: block;
+}
+
+footer .nav i{
+    text-align: center;
+    display:block;
+    font-size: 25px;
+}
+.my {
+    width: 100%;
+}
+.my .login{
+    display: block;
+    background: greenyellow;
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    left: 40%;
+    border-radius: 10px;
+
+
+}
