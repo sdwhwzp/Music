@@ -32,7 +32,12 @@ class My extends React.Component {
 			mail:this.refs.mail.value,
 			code:this.refs.code.value
 		}).then(({data})=>{
-			console.log(data)
+			if (data.ok === 1) {
+				alert(data.msg)
+				this.props.history.push("/login")
+			}else{
+				alert(data.msg)
+			}
 		})
 	}
 	render(){

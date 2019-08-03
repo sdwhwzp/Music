@@ -61,7 +61,7 @@ app.post("/token",function (req, res) {
 app.post("/login",function (req, res) {
 
     const {adminName,passWord}=req.body
-
+    console.log(passWord)
     db.findOne("admin",
         {
             userName:adminName,
