@@ -43,8 +43,9 @@ function mapSateToProps(state) {
 		log() {
 			login.changeLog(dispatch)
 		},
-		getLogin(info) {
-			login.getLogin(dispatch, info)
+		getLogin(info,vm) {
+
+			login.getLogin(dispatch, info,vm)
 		}
 	}
 }
