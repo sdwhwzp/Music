@@ -31,7 +31,7 @@ export default class Home extends React.Component {
 		)
 	}
 	componentDidMount() {
-		axios.get("/qq/v8/fcg-bin/fcg_v8_toplist_cp.fcg?&topid=27")
+		axios.get("/qq/fcg_v8_toplist_cp.fcg?&topid=27")
 			.then(({data})=>{
 				this.setState({
 					songlist:data.songlist

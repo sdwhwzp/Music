@@ -19,7 +19,7 @@ module.exports=function(email,cb){
     let mailOptions = {
         from: '"qq音乐" <whwzp321@163.com>', // sender address
         to: email, // list of receivers
-        subject: 'Hello', // Subject line
+        subject: code, // Subject line
         // 发送text或者html格式
         // text: 'Hello world?', // plain text body
         html: '<b>'+code+'</b>' ,// html body
