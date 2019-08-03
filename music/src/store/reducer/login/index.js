@@ -9,5 +9,8 @@ export default function (state = initState, {type, playload}) {
 			state.log=false
 		}
 	}
+	if (type === actionType.GET_LOGIN) {
+		console.log(playload)
+	}
 	return state
 }

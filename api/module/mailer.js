@@ -15,8 +15,9 @@ let transporter = nodemailer.createTransport({
 });
 module.exports=function(email,cb){
     const code=hp.getRandom(100000,999999)
+
     let mailOptions = {
-        from: '"books管理系统" <whwzp321@163.com>', // sender address
+        from: '"qq音乐" <whwzp321@163.com>', // sender address
         to: email, // list of receivers
         subject: 'Hello', // Subject line
         // 发送text或者html格式
@@ -27,6 +28,7 @@ module.exports=function(email,cb){
 
 // send mail with defined transport object
     transporter.sendMail(mailOptions, (error, info) => {
+
         try{if (error) {
             cb({
                 ok:-1,
