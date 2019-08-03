@@ -25,6 +25,7 @@ class My extends React.Component {
 		}
 	}
 	logon(){
+		console.log(this.refs.mail.value)
 		axios.post('/music/logon',{
 			adminName:this.refs.userName.value,
 			passWord:this.refs.confirm.value,
@@ -47,7 +48,7 @@ class My extends React.Component {
 				<p>确认密码：<input ref={"confirm"} type="password" placeholder={"请再次输入密码"} onBlur={this.confirm.bind(this)}/></p>
 				<p>验证码：<input ref={"code"} type="text" placeholder={"请输入验证码"}/></p>
 				<div>
-					<span><a href="javascript:;" onClick={this.logon.bind(this)} >登录</a></span>
+					<span><a href="javascript:;" onClick={this.logon.bind(this)} >注册</a></span>
 
 				</div>
 
