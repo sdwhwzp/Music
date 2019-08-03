@@ -6,7 +6,7 @@ export default [
         component:Login,
         context:"",
         meta:{
-            title:"登录",
+            title:"注册",
             isfooter:false
         }
     }

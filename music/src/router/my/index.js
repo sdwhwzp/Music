@@ -1,4 +1,3 @@
-
 import My from '../../views/my'
 export default [
     {

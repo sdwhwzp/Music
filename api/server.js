@@ -122,7 +122,6 @@ app.post("/login",function (req, res) {
 
 })
 app.get('/mail', function (req, res) {
-
     const mail = req.query.mail
     db.findOne('userList',{mail},function (err, userInfo) {
         if (userInfo) {
@@ -133,6 +132,7 @@ app.get('/mail', function (req, res) {
         }else {
             db.findOne('codeList', {mail}, function (err, codeInfo) {
                 if (codeInfo) {//存在邮箱
+
                     let t = Date.now() - codeInfo.sendTime
                     if (t > 60 * 1000) {
                         mailer(mail, function (obj) {
@@ -144,6 +144,11 @@ app.get('/mail', function (req, res) {
                                         code: obj.code,
                                         sendTime: Date.now()
                                     }
+                                },function (err) {
+                                    res.json({
+                                        ok:1,
+                                        msg:"发送成功"
+                                    })
                                 })
                             } else {//发送失败
                                 help.json(res)
@@ -157,6 +162,7 @@ app.get('/mail', function (req, res) {
                         })
                     }
                 } else {//数据库中没有发现改手机号
+
                     mailer(mail, function (obj) {//发送验证码 返回的数据obj保存在数据库中
                         if (obj.ok === 1) {//obj.ok===1验证码发送成功 并返回code
                             db.insertOne("codeList", {//将得到的code保存到数据库中
@@ -164,6 +170,7 @@ app.get('/mail', function (req, res) {
                                 code: obj.code,
                                 sendTime: Date.now()
                             }, function (err) {
+
                                 help.json(res, 1, "发送成功")
                             })
                         } else {//不为1 发送失败
@@ -176,9 +183,7 @@ app.get('/mail', function (req, res) {
             })
         }
     })
-    mailer(mail, function (result) {
 
-    })
 })
 app.get("/phoneId",function (req, res) {//发送验证码 get方式
     const phoneId=req.query.phoneId
@@ -205,6 +210,11 @@ app.get("/phoneId",function (req, res) {//发送验证码 get方式
                                             code:obj.code,
                                             sendTime: Date.now()
                                         }
+                                    },function (err) {
+                                        res.json({
+                                            ok:1,
+                                            msg:"发送成功"
+                                        })
                                     })
                                 }else{//发送失败
                                     help.json(res)
@@ -320,95 +330,7 @@ app.get('/userName',function (req, res) {
         }
     })
 })
-app.post('/upload', upload.single('book'), function (req, res, next) {
 
-    if (req.file.filename === "warning") {
-
-        fs.unlink("./upload/warning",function (err) {
-            res.json({
-                ok:2,
-                msg:"请上传符合要求的图书，目前支持'.epub','.txt','.mobi','.awz3'"
-            })
-        })
-    }
-    else res.json({
-            ok:1,
-            msg:"上传成功",
-            filename:req.file.originalname,
-            book:req.file.filename
-        })
-
-})
-app.post('/books',function (req, res) {
-
-    const {token,bookName,booksType,book}=req.body
-
-    const decode = jwt.decode(token)
-    if (decode.info) {
-        db.insertOne("bookList",{
-            userName:decode.info.adminName,
-            code:decode.info.code,
-            bookName,
-            booksType,
-            addTime:Date.now(),
-            path:"upload/"+book
-        },function (err) {
-            res.json({
-                ok:1,
-                msg:"上传成功"
-            })
-        })
-    }else {
-       res.json({
-           ok:-1,
-           msg:"上传失败"
-       })
-    }
-
-})
-app.get('/bookslist',function (req, res) {
-    let pageIndex=(req.query.pageIndex)
-    const token=req.query.token
-    const decode=jwt.decode(token)
-    let whereObj={}
-    db.count('bookList',whereObj,function (count) {
-        let pageNum=8;
-        let pageSum=Math.ceil(count/pageNum)
-        if (pageSum < 1) pageSum=1
-        if (pageIndex < 1) pageIndex=1
-        if (pageIndex > pageSum) pageIndex=pageSum
-        db.find('bookList',{
-            limit:pageNum,
-            skip:(pageIndex-1)*pageNum,
-            whereObj:{
-                userName:decode.info.adminName,
-                code:decode.info.code
-            },
-            sortObj:{
-                addTime: -1
-
-            }
-        },function (err, bookInfo) {
-            if (bookInfo){
-                res.json({
-                    ok:1,
-                    pageIndex,
-                    pageSum,
-                    bookInfo
-                })
-            } else {
-                res.json({
-                    ok:-1,
-                    msg:"暂无图书请上传"
-                })
-            }
-
-        })
-    })
-
-
-
-})
 app.delete('/delete',function (req, res) {
 
     const row=JSON.parse(req.query.row)
