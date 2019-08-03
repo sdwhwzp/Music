@@ -25,7 +25,7 @@ code {
 }
 
 footer{
-  position:absolute;
+  position:fixed;
   bottom: 0;
   height: 8%;
   width: 100%;
@@ -69,4 +69,32 @@ footer .nav i{
   position: absolute;
   left: 40%;
   border-radius: 10px;
+}
+.singer-list ol li{
+  line-height: 60px;
+  width: 100%;
+  padding-bottom: 5px;
+  /*background: red;*/
+
+}
+
+.singer-list .indexname{
+  height: 30px;
+  line-height: 30px;
+}
+.singer-list ol,ul{
+  padding-left: 10px;
+
+}
+.singer-list span{
+  padding-left: 10px;
+}
+.singer-list li img{
+width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+.singer-top{
+  position: fixed;
+  top: 0;
 }

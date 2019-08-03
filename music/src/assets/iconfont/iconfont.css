@@ -14,7 +14,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-navbankicon:before {
+  content: "\e605";
+}
 .icon-xingxing:before {
   content: "\e631";
 }
