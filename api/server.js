@@ -61,7 +61,7 @@ app.post("/token",function (req, res) {
 app.post("/login",function (req, res) {
 
     const {adminName,passWord}=req.body
-
+    console.log(passWord)
     db.findOne("admin",
         {
             userName:adminName,
@@ -251,7 +251,9 @@ app.get("/phoneId",function (req, res) {//发送验证码 get方式
 })
 app.post("/logon",function (req,res) {//post方式接收
     const {adminName,passWord,code}=req.body
-    const mail =req.body.mail | ""
+
+    const mail =req.body.mail
+
     const phoneId=req.body.phoneId | ""
 
     /**
@@ -267,12 +269,13 @@ app.post("/logon",function (req,res) {//post方式接收
             })
         }else{
             db.findOne("codeList",{
-                phoneId:phoneId+"",
                 mail
             },function (err, codeInfo) {
-
+                console.log(codeInfo)
                 if (codeInfo) {//有验证码
+
                     if (codeInfo.code === (code / 1)) {//验证码存在
+
                         if ((Date.now() - codeInfo.sendTime) < 10 * 60 * 1000) {//发送验证码没有超过10分钟
                             db.insertOne("userList", {
                                 userName: adminName,

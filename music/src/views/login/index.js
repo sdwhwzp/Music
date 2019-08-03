@@ -10,7 +10,7 @@ import  {withRouter} from 'react-router-dom'
 	getLogin(){
 		const userName=this.refs.userName.value
 		const password=this.refs.password.value
-		this.props.getLogin({userName,password})
+		this.props.getLogin({userName,password},this)
 	}
 	logon(){
 		this.props.history.push('/logon')

@@ -5,7 +5,7 @@ export default class My extends React.Component {
 		super()
 	}
 	isExit(){
-		localStorage.admin=null
+		localStorage.token=null
 		localStorage.clear()
 		this.props.log()
 		this.forceUpdate();
