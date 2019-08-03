@@ -1,7 +1,7 @@
 import React from 'react'
 import router from "../../router";
 import {Route ,NavLink } from 'react-router-dom'
-
+import './style.css';
 export default class Nav extends React.Component{
 	render() {
 
@@ -12,7 +12,7 @@ export default class Nav extends React.Component{
 
 					return (
 
-							<span key={i} id={'nav'}>
+						<span key={i} id={'nav'} >
 								<NavLink to={v.to}><i className={"icon iconfont "+" "+v.iconfont}></i>{v.context}</NavLink>
 							</span>
 					)
