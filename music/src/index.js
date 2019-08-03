@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import axios from "axios";
+import config from "./common/config";
 import * as serviceWorker from './serviceWorker';
 
+React.Component.prototype.config = config;
+// axios.interceptors.request.use(config=>{
+//     config.url =
+// })
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
