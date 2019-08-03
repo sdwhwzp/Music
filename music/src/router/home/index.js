@@ -14,6 +14,10 @@ export default [
             title:"首页",
             isfooter:true
         },
-
     }
+    // {
+    //     to:"/search",
+    //     path:"/search",
+    //     component:"Search"
+    // }
 ]

@@ -11,9 +11,21 @@ export default class Search extends React.Component{
     render(){
         return(
             <div>
-                <input type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
+                <input width={"200px"} type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
+                {/*'<i className={"iconfont"}>icon-RectangleCopy</i>'*/}
                 {
+                    this.state.getSearchList.map((v,i)=>{
+                        return(
+                            <div key={i}>
+                                <p>{v.albumname}</p>
+                            </div>
+                        )
+                    })
                 }
+                <div>
+                    <p>热门搜索</p>
+
+                </div>
             </div>
         )
     }
@@ -30,6 +42,8 @@ export default class Search extends React.Component{
             }
         });
         console.log(data);
-
+        this.setState({
+            getSearchList:data.data.song.list
+        })
     }
 }
