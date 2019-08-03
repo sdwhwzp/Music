@@ -8,7 +8,7 @@ module.exports = function (app) {
 		}
 	}))
     app.use("/qq",proxy({
-        target:"https://c.y.qq.com",
+        target:"https://c.y.qq.com/v8/fcg-bin",
         changeOrigin:true,
         pathRewrite:{
             "^/qq":""
