@@ -6,6 +6,7 @@ import {
     NavLink
 } from 'react-router-dom'
 import Components from './components'
+import log from './comonentsWrap'
 function App() {
 
  return (

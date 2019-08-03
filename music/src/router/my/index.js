@@ -1,4 +1,4 @@
-import login from '../login'
+
 import My from '../../views/my'
 export default [
     {
@@ -12,7 +12,7 @@ export default [
             isfooter:true
         },
         children:{
-            ...login
+
         }
     }
 ]
