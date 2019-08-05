@@ -3,6 +3,7 @@ const path =require("path")
 const db=require("./module/db")
 const help =require("./module/hp")
 const phoneCode=require("./module/phoneCode")
+const sing =require('./module/http')
 const jwt =require("./module/jwt")
 const mailer =require("./module/mailer")
 const bodyParser=require("body-parser")
@@ -27,6 +28,7 @@ var storage = multer.diskStorage({
     }
 })
 var upload = multer({ storage: storage })
+
 const update=upload.single('book')
 app.use(bodyParser.json())
 app.use('/download',express.static(path.join(__dirname,'upload')))
@@ -333,8 +335,16 @@ app.get('/userName',function (req, res) {
         }
     })
 })
-app.get("/singList",function (req, res) {
-
+app.get("/detail",function (req, res) {
+        const disstid=req.query.disstid
+    sing.detail(disstid,function (data) {
+        res.json(data)
+    })
+})
+app.get('/singList',function (req, res) {
+    sing.singList(function (data) {
+        res.json(data)
+    })
 })
 app.delete('/delete',function (req, res) {
 

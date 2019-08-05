@@ -14,11 +14,7 @@ module.exports = function (app) {
         pathRewrite: {
             "^/qq": ""
         },
-	    headers: {
-		    referer: 'https://y.qq.com/',
-		    origin: 'https://y.qq.com',
-		    host:"https://y.qq.com"
-	    }
+
     }))
 
 
