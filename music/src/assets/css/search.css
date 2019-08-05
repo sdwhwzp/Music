@@ -20,12 +20,11 @@
 }
 .hotSearch{
     float: left;
-    border:1px solid #eee;
-    background:#ccc;
-    border-radius: 5px;
-    margin:2px;
+    border:1px solid #404040;
+    border-radius: 7px;
+    margin:4px;
 }
 .hotSearch p{
     font-size:12px;
-
+    margin:4px;
 }

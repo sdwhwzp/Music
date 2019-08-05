@@ -6,6 +6,7 @@ import singer from "./singer";
 import logon from './logon'
 import search from './search'
 import rankingList from './rankingList'
+import rankingListDetail from "./rankingListDetail"
 export default [
     ...home,
     ...recommend,
@@ -14,7 +15,7 @@ export default [
     ...singer,
     ...logon,
     ...search,
-    ...rankingList
-
+    ...rankingList,
+    ...rankingListDetail
 ]
 
