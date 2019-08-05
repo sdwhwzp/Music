@@ -1,15 +1,14 @@
 import "../../index.css"
 import React from 'react'
 import axios from "axios"
-import {withRouter,Route,BrowsRouter as router} from "react-router-dom"//不被route包含的组件不能获取history，match，location，用这个组件可以获取
+import {withRouter,Route} from "react-router-dom"//不被route包含的组件不能获取history，match，location，用这个组件可以获取
 import BS from 'better-scroll'
 import getState from "../../common/getState"
-import NavRoute from "../../components/Route/index";
-import Songlist from '../../views/singer/songList'
 //引入获取state值的函数方法
- class Singer extends React.Component {
-    constructor(props) {
-        super(props);
+
+class Singer extends React.Component {
+    constructor() {
+        super();
         this.state = {
             ListSinger:[],
             nameList:{},
@@ -44,7 +43,7 @@ import Songlist from '../../views/singer/songList'
                         arrs.push(key)
                     }
                     this.setState({
-                        sel:arrs[i+1]//根据下标得出key值，更改sel的classname，产生高光
+                        sel:arrs[i]//根据下标得出key值，更改sel的classname，产生高光
                     })
                     break;
                 }
@@ -58,7 +57,7 @@ import Songlist from '../../views/singer/songList'
         return(
             <div className={"singer-list"}>
 
-                <div className={'singer-top'} style={{height:"60px",lineHeight:'60px'}}>
+                <div className={'singer-top'} style={{height:"45px",lineHeight:'45px'}}>
                         <span className={"icon iconfont icon-navbankicon"} onClick={()=>{
                             this.props.history.go(-1)
                         }}></span>

@@ -8,16 +8,12 @@ export default [
         context:"音乐馆",
         iconfont:"icon-yinyue",
         children:{
-
         },
         meta:{
             title:"首页",
             isFooter:true
         },
     }
-    // {
-    //     to:"/search",
-    //     path:"/search",
-    //     component:"Search"
-    // }
+
+
 ]

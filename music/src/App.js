@@ -2,7 +2,6 @@ import React from 'react';
 import router from './router'
 import './App.css';
 import {
-
 	BrowserRouter as Router,
 NavLink
 } from 'react-router-dom'
@@ -18,8 +17,9 @@ componentWillMount() {
 render() {
 		return (
 			<div>
+
 				<div>
-					<Components.Search></Components.Search>
+					<Components.Top></Components.Top>
 				</div>
 				<nav >
 					<Router >
