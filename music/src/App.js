@@ -17,16 +17,10 @@ componentWillMount() {
 render() {
 		return (
 			<div>
-<<<<<<< HEAD
 
-=======
-				{/*<div>*/}
-				{/*	<Components.Search></Components.Search>*/}
-				{/*</div>*/}
 				<div>
 					<Components.Top></Components.Top>
 				</div>
->>>>>>> 2ade2b2ea5d5a91d8a455bc1d8bbc0c01a0cb904
 				<nav >
 					<Router >
 						<Components.navRoute {...this.props} style={{height:"100%"}}></Components.navRoute>
