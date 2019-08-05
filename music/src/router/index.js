@@ -7,6 +7,7 @@ import singer from "./singer";
 
 import logon from './logon'
 
+
 export default [
     ...home,
     ...recommend,

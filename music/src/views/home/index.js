@@ -1,13 +1,12 @@
 import React from 'react'
 
-import {NavLink} from 'react-router-dom'
+//import homebackground from '../../assets/images/logo.png';
 
-import homebackground from '../../assets/images/logo.png';
+// import Swiper from 'swiper/dist/js/swiper';
+// import 'swiper/dist/css/swiper.css';
+
 import axios from 'axios';
-const homeImage = {
-	backgroundSize:'100% 100%',
-	backgroundImage: 'url(' + homebackground + ')'
-}
+import {NavLink} from "react-router-dom";
 
 export default class Home extends React.Component {
 	constructor(props){
@@ -19,9 +18,10 @@ export default class Home extends React.Component {
 	render(){
 		return(
 			<div>
-
+				<NavLink to={"/search"}>搜索</NavLink>
 				首页
 				<NavLink className={"singer"} to={"/singer"}>歌手</NavLink>
+				<NavLink to={"/rankingList"}>排行榜</NavLink>
 
 				{
 					this.state.songlist.map((item,index)=>{
@@ -33,7 +33,6 @@ export default class Home extends React.Component {
 						)
 					})
 				}
-
 			</div>
 		)
 	}
