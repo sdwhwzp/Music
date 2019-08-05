@@ -1,6 +1,9 @@
 import React from 'react'
 
-import {NavLink} from 'react-router-dom'
+import {
+	BrowserRouter as Router,
+	NavLink
+} from 'react-router-dom'
 
 import homebackground from '../../assets/images/logo.png';
 import axios from 'axios';
@@ -19,10 +22,10 @@ export default class Home extends React.Component {
 	render(){
 		return(
 			<div>
-
+				<NavLink to={"/search"}>搜索</NavLink>
 				首页
 				<NavLink className={"singer"} to={"/singer"}>歌手</NavLink>
-
+				<NavLink to={"/rankingList"}>排行榜</NavLink>
 				{
 					this.state.songlist.map((item,index)=>{
 						return(

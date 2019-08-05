@@ -1,4 +1,6 @@
 import Home from '../../views/home'
+import RankingList from "../../views/rankingList"
+import Search from "../../views/Search";
 export default [
     {
         to:'/',
@@ -12,12 +14,25 @@ export default [
         },
         meta:{
             title:"首页",
-            isfooter:true
+            isFooter:true
         },
+    },
+    {
+        to:"/search",
+        path:"/search",
+        component:Search,
+        meta:{
+            title:"搜索",
+            isFooter:false
+        }
+    },
+    {
+        to:"/rankingList",
+        path:"/rankingList",
+        component:RankingList,
+        meta:{
+            title:"排行榜",
+            isFooter:false
+        }
     }
-    // {
-    //     to:"/search",
-    //     path:"/search",
-    //     component:"Search"
-    // }
 ]

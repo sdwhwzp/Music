@@ -18,9 +18,7 @@ componentWillMount() {
 render() {
 		return (
 			<div>
-				<div>
-					<Components.Search></Components.Search>
-				</div>
+
 				<nav >
 					<Router >
 						<Components.navRoute {...this.props} style={{height:"100%"}}></Components.navRoute>

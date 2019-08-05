@@ -11,7 +11,7 @@ export default class Search extends React.Component{
     render(){
         return(
             <div>
-                <input width={"200px"} type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
+                <input type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
                 {/*'<i className={"iconfont"}>icon-RectangleCopy</i>'*/}
                 {
                     this.state.getSearchList.map((v,i)=>{
@@ -23,14 +23,23 @@ export default class Search extends React.Component{
                     })
                 }
                 <div>
-                    <p>热门搜索</p>
-
+                    热门搜索
+                    {/*{*/}
+                    {/*    this.state.hotSearchList.map((v,i)=>{*/}
+                    {/*        return(*/}
+                    {/*            <div>*/}
+                    {/*                {v.k}*/}
+                    {/*            </div>*/}
+                    {/*        )*/}
+                    {/*    })*/}
+                    {/*}*/}
                 </div>
             </div>
         )
     }
-    componentDidMount() {
-
+    componentWillMount() {
+        console.log(11111);
+        this.hotSearch();
     }
 
     async search(){
@@ -44,6 +53,13 @@ export default class Search extends React.Component{
         console.log(data);
         this.setState({
             getSearchList:data.data.song.list
+        })
+    }
+    async hotSearch(){
+        const {data} = await axios.get("/qq/splcloud/fcgi-bin/gethotkey.fcg?g_tk=5381&uin=0&format=json");
+        console.log(data);
+        this.setState({
+            hotSearchList:data.data.hotkey.k
         })
     }
 }

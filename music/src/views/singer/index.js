@@ -1,7 +1,7 @@
 import "../../index.css"
 import React from 'react'
 import axios from "axios"
-import Bs from 'better-scroll'
+// import Bs from 'better-scroll'
 import getState from "../../common/getState"//引入获取state值的函数方法
 export default class Singer extends React.Component {
     constructor() {
