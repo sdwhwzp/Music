@@ -1,24 +1,26 @@
 import React from 'react';
 import axios from "axios";
-export default class Search extends React.Component{
-    constructor(){
+export default class Search extends React.Component {
+    constructor() {
         super();
         this.state = {
-            getSearchList:[],
-            hotSearchList:[]
+            getSearchList: [],
+            hotSearchList: []
         }
     }
-    render(){
-        return(
+
+    render() {
+        return (
             <div>
                 <div className={"search"}>
-                    <input className={"search_input"} type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
+                    <input className={"search_input"} type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"}
+                           onKeyPress={this.search.bind(this)}/>
                     <i className={"iconfont icon-RectangleCopy"}></i>
                 </div>
                 <div>
                     {
-                        this.state.getSearchList.map((v,i)=>{
-                            return(
+                        this.state.getSearchList.map((v, i) => {
+                            return (
                                 <p key={i} className={"searchList"}>
                                     {v.albumname}
                                 </p>
@@ -30,8 +32,8 @@ export default class Search extends React.Component{
                     <h5>热门搜索</h5>
                     <div>
                         {
-                            this.state.hotSearchList.map((v,i)=>{
-                                return(
+                            this.state.hotSearchList.map((v, i) => {
+                                return (
                                     <div key={i} className={"hotSearch"}>
                                         <p>{v.k}</p>
                                     </div>
@@ -44,29 +46,30 @@ export default class Search extends React.Component{
             </div>
         )
     }
+
     componentWillMount() {
-        console.log(11111,this);
+        console.log(11111, this);
         axios.get("/qq/splcloud/fcgi-bin/gethotkey.fcg?g_tk=5381&uin=0&format=json")
-            .then(({data})=>{
+            .then(({data}) => {
                 console.log(data);
                 this.setState({
-                    hotSearchList:data.data.hotkey
+                    hotSearchList: data.data.hotkey
                 });
                 console.log(this.state.hotSearchList);
             })
     }
 
-    async search(){
-        const {data} = await axios.get("/qq/soso/fcgi-bin/client_search_cp?format=json",{
-            params:{
-                p:1,
-                n:10,
-                w:this.refs.search.value
+    async search() {
+        const {data} = await axios.get("/qq/soso/fcgi-bin/client_search_cp?format=json", {
+            params: {
+                p: 1,
+                n: 10,
+                w: this.refs.search.value
             }
         });
         console.log(data);
         this.setState({
-            getSearchList:data.data.song.list
+            getSearchList: data.data.song.list
         })
     }
 }
