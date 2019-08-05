@@ -7,7 +7,7 @@ export default [
         context:"",
         meta:{
             title:"注册",
-            isfooter:false
+            isFooter:false
         }
     }
 ]

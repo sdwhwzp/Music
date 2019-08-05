@@ -7,6 +7,7 @@ import React from 'react'
 
 import axios from 'axios';
 import {NavLink} from "react-router-dom";
+import Components from "../../components";
 
 export default class Home extends React.Component {
 	constructor(props){
@@ -15,6 +16,10 @@ export default class Home extends React.Component {
 			songlist:[]
 		}
 	}
+	componentWillMount() {
+		console.log(this.props,225222)
+	}
+
 	render(){
 		return(
 			<div>
@@ -33,6 +38,7 @@ export default class Home extends React.Component {
 						)
 					})
 				}
+
 			</div>
 		)
 	}

@@ -333,7 +333,9 @@ app.get('/userName',function (req, res) {
         }
     })
 })
+app.get("/singList",function (req, res) {
 
+})
 app.delete('/delete',function (req, res) {
 
     const row=JSON.parse(req.query.row)

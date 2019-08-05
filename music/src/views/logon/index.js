@@ -42,7 +42,7 @@ class My extends React.Component {
 	}
 	render(){
 		return(
-			<div id={"Login"}>
+			<div id={"Logon"}>
 				<a href="javascript:;" onClick={this.goback.bind(this)}>取消</a>
 				<div className={"logo"}>
 					<img src={[require("../../assets/img/logo.png")]} alt=""/>
