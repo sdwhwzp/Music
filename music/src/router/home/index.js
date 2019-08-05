@@ -1,6 +1,4 @@
 import Home from '../../views/home'
-import RankingList from "../../views/rankingList"
-import Search from "../../views/Search";
 export default [
     {
         to:'/',
