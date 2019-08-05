@@ -22,6 +22,7 @@ export default class Home extends React.Component {
 				首页
 				<NavLink className={"singer"} to={"/singer"}>歌手</NavLink>
 				<NavLink to={"/rankingList"}>排行榜</NavLink>
+				<NavLink to={"/recommend"}>歌单</NavLink>
 
 				{
 					this.state.songlist.map((item,index)=>{
