@@ -11,30 +11,34 @@ export default class Search extends React.Component{
     render(){
         return(
             <div>
-                <div>
-                    <input type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
+                <div className={"search"}>
+                    <input className={"search_input"} type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
                     <i className={"iconfont icon-RectangleCopy"}></i>
                 </div>
-                {
-                    this.state.getSearchList.map((v,i)=>{
-                        return(
-                            <div key={i}>
-                                <p>{v.albumname}</p>
-                            </div>
-                        )
-                    })
-                }
                 <div>
-                    热门搜索
-                    {/*{*/}
-                    {/*    this.state.hotSearchList.map((v,i)=>{*/}
-                    {/*        return(*/}
-                    {/*            <div key={i}>*/}
-                    {/*                <div>{v.k}</div>*/}
-                    {/*            </div>*/}
-                    {/*        )*/}
-                    {/*    })*/}
-                    {/*}*/}
+                    {
+                        this.state.getSearchList.map((v,i)=>{
+                            return(
+                                <p key={i} className={"searchList"}>
+                                    {v.albumname}
+                                </p>
+                            )
+                        })
+                    }
+                </div>
+                <div>
+                    <h5>热门搜索</h5>
+                    <div>
+                        {
+                            this.state.hotSearchList.map((v,i)=>{
+                                return(
+                                    <div key={i} className={"hotSearch"}>
+                                        <p>{v.k}</p>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
 
             </div>
@@ -42,7 +46,14 @@ export default class Search extends React.Component{
     }
     componentWillMount() {
         console.log(11111,this);
-        this.hotSearch();
+        axios.get("/qq/splcloud/fcgi-bin/gethotkey.fcg?g_tk=5381&uin=0&format=json")
+            .then(({data})=>{
+                console.log(data);
+                this.setState({
+                    hotSearchList:data.data.hotkey
+                });
+                console.log(this.state.hotSearchList);
+            })
     }
 
     async search(){
@@ -56,13 +67,6 @@ export default class Search extends React.Component{
         console.log(data);
         this.setState({
             getSearchList:data.data.song.list
-        })
-    }
-    async hotSearch(){
-        const {data} = await axios.get("/qq/splcloud/fcgi-bin/gethotkey.fcg?g_tk=5381&uin=0&format=json");
-        console.log(data);
-        this.setState({
-            hotSearchList:data.data.hotkey.k
         })
     }
 }
