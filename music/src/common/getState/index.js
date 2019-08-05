@@ -19,7 +19,7 @@ export default function getState(state){
             }
             delete obj[9]
             delete obj[hot]
-console.log(obj)
+
 
 
         let newkey = Object.keys(obj).sort();//按照首字母排序

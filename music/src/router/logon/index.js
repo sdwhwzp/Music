@@ -7,7 +7,8 @@ export default [
 			context:"",
 			meta:{
 				title:"登录",
-				isFooter:false
+                isFooter:false
+
 			}
 		}
 		]

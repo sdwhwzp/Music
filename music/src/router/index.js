@@ -4,17 +4,22 @@ import recommend from './recommend'
 import login from "./login";
 import singer from "./singer";
 import logon from './logon'
+import SongList from "./songList";
 import search from './search'
 import rankingList from './rankingList'
+import rankingListDetail from "./rankingListDetail"
 export default [
     ...home,
     ...recommend,
     ...my,
     ...login,
     ...singer,
+    ...SongList,
     ...logon,
     ...search,
-    ...rankingList
+
+    ...rankingList,
+    ...rankingListDetail
 
 ]
 

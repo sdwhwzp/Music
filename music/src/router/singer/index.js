@@ -7,7 +7,7 @@ export default [
         context:"",
         meta:{
             title:"歌手",
-            isfooter:false
+            isFooter:false
         }
     }
 ]
