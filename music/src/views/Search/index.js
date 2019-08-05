@@ -11,8 +11,10 @@ export default class Search extends React.Component{
     render(){
         return(
             <div>
-                <input type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
-                {/*'<i className={"iconfont"}>icon-RectangleCopy</i>'*/}
+                <div>
+                    <input type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"} onKeyPress={this.search.bind(this)} />
+                    <i className={"iconfont icon-RectangleCopy"}></i>
+                </div>
                 {
                     this.state.getSearchList.map((v,i)=>{
                         return(
@@ -27,18 +29,19 @@ export default class Search extends React.Component{
                     {/*{*/}
                     {/*    this.state.hotSearchList.map((v,i)=>{*/}
                     {/*        return(*/}
-                    {/*            <div>*/}
-                    {/*                {v.k}*/}
+                    {/*            <div key={i}>*/}
+                    {/*                <div>{v.k}</div>*/}
                     {/*            </div>*/}
                     {/*        )*/}
                     {/*    })*/}
                     {/*}*/}
                 </div>
+
             </div>
         )
     }
     componentWillMount() {
-        console.log(11111);
+        console.log(11111,this);
         this.hotSearch();
     }
 
