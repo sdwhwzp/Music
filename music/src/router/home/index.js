@@ -12,7 +12,7 @@ export default [
         },
         meta:{
             title:"首页",
-            isfooter:true
+            isFooter:true
         },
     }
     // {

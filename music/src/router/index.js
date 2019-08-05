@@ -6,6 +6,7 @@ import login from "./login";
 import singer from "./singer";
 
 import logon from './logon'
+import SongList from "./songList";
 
 export default [
     ...home,
@@ -14,7 +15,7 @@ export default [
     ...login,
 
     ...singer,
-
+    ...SongList,
     ...logon
 
 ]
