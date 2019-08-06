@@ -23,6 +23,43 @@ export default class Home extends React.Component {
 	render(){
 		return(
 			<div>
+
+				<Components.Section></Components.Section>
+				<div className={'section-two'}></div>
+				<div className={'section-four'}>
+					{
+						this.state.songlist.map((item,index)=>{
+							return(
+								<div key={item.cur_count}>
+									<h3>{item.cur_count}:{item.data.albumname}</h3>
+									<span>{item.data.interval}%:{item.data.albumdesc}:</span>
+								</div>
+							)
+						})
+					}
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+
+				</div>
+
 				<NavLink to={"/search"}>搜索</NavLink>
 				首页
 				<NavLink className={"singer"} to={"/singer"}>歌手</NavLink>
@@ -39,6 +76,7 @@ export default class Home extends React.Component {
 						)
 					})
 				}
+
 
 			</div>
 		)
