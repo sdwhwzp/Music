@@ -14,8 +14,8 @@ export default class My extends React.Component {
 		if(!this.props.state.login.log) {
 			return (
 				<div className={"my"}>
+					<NavLink className={"login"} to={"/login"}><i className={"icon iconfont icon-wode"}></i>立即登录</NavLink>
 
-				<NavLink className={"login"} to={"/login"}><i className={"icon iconfont icon-wode"}></i>立即登录</NavLink>
 				</div>
 			)
 		}else {

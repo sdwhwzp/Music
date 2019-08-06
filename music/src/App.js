@@ -42,8 +42,10 @@ function mapSateToProps(state) {
 			login.changeLog(dispatch)
 		},
 		getLogin(info,vm) {
-
 			login.getLogin(dispatch, info,vm)
+		},
+		getSingList(info,vm){
+
 		}
 	}
 }
