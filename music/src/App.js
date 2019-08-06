@@ -3,7 +3,7 @@ import router from './router'
 import './App.css';
 import {
 	BrowserRouter as Router,
-NavLink
+	NavLink
 } from 'react-router-dom'
 import Components from './components'
 import log from './comonentsWrap'
@@ -11,16 +11,12 @@ import {connect} from 'react-redux'
 import login from './store/actionCreator/login'
 import axios from 'axios'
 class App extends React.Component {
-componentWillMount() {
-	this.props.log()
-}
-render() {
+	componentWillMount() {
+		this.props.log()
+	}
+	render() {
 		return (
 			<div>
-
-				<div>
-					<Components.Top></Components.Top>
-				</div>
 				<nav >
 					<Router >
 						<Components.navRoute {...this.props} style={{height:"100%"}}></Components.navRoute>
@@ -28,6 +24,7 @@ render() {
 					</Router>
 				</nav>
 			</div>
+
 
 
 		)

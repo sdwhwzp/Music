@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from 'react';
 import axios from "axios";
 export default class Search extends React.Component{
@@ -68,4 +66,3 @@ export default class Search extends React.Component{
         })
     }
 }
->>>>>>> d50c6a31a6a1052bb9541b937c6f7d9a7b3cdd2b

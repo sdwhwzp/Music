@@ -7,6 +7,7 @@ import React from 'react'
 
 import axios from 'axios';
 import {NavLink} from "react-router-dom";
+import Components from "../../components";
 
 export default class Home extends React.Component {
 	constructor(props){
@@ -18,21 +19,45 @@ export default class Home extends React.Component {
 	render(){
 		return(
 			<div>
-				<NavLink to={"/search"}>搜索</NavLink>
-				首页
-				<NavLink className={"singer"} to={"/singer"}>歌手</NavLink>
-				<NavLink to={"/rankingList"}>排行榜</NavLink>
+				<Components.Section></Components.Section>
+				<Components.Top></Components.Top>
+				<div className={'section-two'}></div>
+				<div className={'section-four'}>
+					{
+						this.state.songlist.map((item,index)=>{
+							return(
+								<div key={item.cur_count}>
+									<h3>{item.cur_count}:{item.data.albumname}</h3>
+									<span>{item.data.interval}%:{item.data.albumdesc}:</span>
+								</div>
+							)
+						})
+					}
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
 
-				{
-					this.state.songlist.map((item,index)=>{
-						return(
-							<div key={item.cur_count}>
-								<h3>{item.cur_count}:{item.data.albumname}</h3>
-								<span>{item.data.interval}%:{item.data.albumdesc}:</span>
-							</div>
-						)
-					})
-				}
+
+
+				</div>
+
 			</div>
 		)
 	}
