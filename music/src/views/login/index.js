@@ -4,7 +4,11 @@ import  {withRouter} from 'react-router-dom'
 	constructor(props){
 		super(props)
 	}
-	goback(){
+	componentWillMount() {
+		console.log(this.props,555)
+	}
+
+	 goback(){
 		this.props.history.go(-1)
 	}
 	getLogin(){

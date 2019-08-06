@@ -1,6 +1,9 @@
 import React from 'react';
 import axios from "axios";
-export default class Search extends React.Component {
+import {
+    withRouter
+} from "react-router-dom"
+class Search extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -11,7 +14,8 @@ export default class Search extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id={"search_main"}>
+                <p className={"cancel"} onClick={()=>{this.props.history.go(-1)}}>取消</p>
                 <div className={"search"}>
                     <input className={"search_input"} type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"}
                            onKeyPress={this.search.bind(this)}/>
@@ -73,3 +77,4 @@ export default class Search extends React.Component {
         })
     }
 }
+export default withRouter(Search);

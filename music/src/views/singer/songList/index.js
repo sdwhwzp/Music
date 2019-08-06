@@ -42,7 +42,6 @@ class SongList extends React.Component{
             if(y>=0){
                 img.style.transform=`scale(${precent})`
             }
-            console.log(imgH)
             shadow.style=`transform:translate3d(0,${distence}px,0)`
         })
 

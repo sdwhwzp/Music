@@ -8,6 +8,7 @@ export default [
 			meta:{
 				title:"登录",
                 isFooter:false
+
 			}
 		}
 		]

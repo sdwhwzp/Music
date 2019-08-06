@@ -13,16 +13,15 @@
 }
 
 #Login .logo img{
-
-
-    margin-top: 10%;
+    margin-top: 36%;
     margin-bottom: 200px;
     width: 150px;
 
 }
+
 #Login div:nth-last-child(1) {
     margin-top:50px ;
-    margin-bottom:50% ;
+    margin-bottom:23% ;
 
     font-size: 20px;
 }
@@ -35,6 +34,45 @@
 
 }
 #Login p input{
+    width:200px;
+    height: 30px;
+}
+
+#Logon {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: #a0d7c0;
+}
+#Logon a:nth-child(1){
+    color: white;
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
+
+#Logon .logo img{
+    margin-top: 34%;
+    margin-bottom: 14%;
+    width: 150px;
+
+}
+
+#Logon div:nth-last-child(1) {
+    margin-top:50px ;
+    margin-bottom:28% ;
+
+    font-size: 20px;
+}
+#Logon div:nth-last-child(1) a{
+    position: static;
+    margin-left: 10px;
+}
+#Logon p {
+    font-size: 20px;
+
+}
+#Logon p input{
     width:200px;
     height: 30px;
 }
