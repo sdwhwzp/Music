@@ -15,6 +15,7 @@ class RankingListDetail extends React.Component{
     render(){
         return(
             <div id={"rankingListDetail"}>
+                <p className={"iconfont icon-navbankicon"} onClick={()=>{this.props.history.go(-1)}}></p>
                 <div className={"rankingListDetailHead"}>
                     <img id={"rankingListDetailImg"} src={this.state.topInfo.pic_v12} alt=""/>
                     <p>{this.state.topInfo.ListName}</p>

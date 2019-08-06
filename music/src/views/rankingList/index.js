@@ -15,8 +15,8 @@ class RankingList extends React.Component{
     render() {
         return (
             <div className={"rankingList"}>
+                <p className={"iconfont icon-navbankicon"} onClick={()=>{this.props.history.go(-1)}}></p>
                 <div>
-                    <p className={"iconfont icon-navbankicon"} onClick={()=>{this.props.history.go(-1)}}></p>
                     <h3>巅峰榜</h3>
                 </div>
                     {

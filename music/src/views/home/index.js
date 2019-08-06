@@ -22,11 +22,11 @@ export default class Home extends React.Component {
 
 	render(){
 		return(
-			<div>
-
+			<div className={"context"}>
 				<Components.Section></Components.Section>
 
 				<div className={'section-four'}>
+
 					<div className={'section-two'}></div>
 					{
 						this.state.songlist.map((item,index)=>{
@@ -61,9 +61,16 @@ export default class Home extends React.Component {
 
 				</div>
 
-
-
-
+				{
+					this.state.songlist.map((item,index)=>{
+						return(
+							<div key={item.cur_count}>
+								<h3>{item.cur_count}:{item.data.albumname}</h3>
+								<span>{item.data.interval}%:{item.data.albumdesc}:</span>
+							</div>
+						)
+					})
+				}
 
 
 			</div>

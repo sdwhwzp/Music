@@ -346,6 +346,11 @@ app.get('/singList',function (req, res) {
         res.json(data)
     })
 })
+app.get('/singListtwo',function (req, res) {
+    sing.singListtwo(function (data) {
+        res.json(data)
+    })
+})
 app.delete('/delete',function (req, res) {
 
     const row=JSON.parse(req.query.row)

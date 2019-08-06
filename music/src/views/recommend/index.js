@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from  'axios'
-export default class Recommed extends React.Component {
+import {
+	withRouter
+} from 'react-router-dom'
+class Recommend extends React.Component {
 	constructor(){
 		super();
 		this.state={
@@ -8,18 +11,22 @@ export default class Recommed extends React.Component {
 		}
 	}
 	componentWillMount() {
+		console.log(this.props.match.params);
 		axios.get("/music/singList",{
 			params:{
 				disstid:3602407677
 			}
 		})
 			.then(({data})=>{
-				console.log(data);
+				// console.log(data);
 				this.setState({
 					songSheetList:data.data.list
 				});
-				console.log(this.state.songSheetList);
+				// console.log(this.state.songSheetList);
 			})
+	}
+	detail(dissid){
+		this.props.history.push('/singlistdetail/'+dissid)
 	}
 	render(){
 		return(
@@ -27,8 +34,8 @@ export default class Recommed extends React.Component {
 				{
 					this.state.songSheetList.map((v,i)=>{
 						return(
-							<div key={i} className={"songSheetList_l"}>
-								<img src={v.imgurl} alt=""/>
+							<div key={i} className={"songSheetList_l"} >
+								<a href={'javascript:;'} onClick={this.detail.bind(this,v.dissid)}><img src={v.imgurl} alt=""/></a>
 								<p>{v.dissname}</p>
 							</div>
 						)
@@ -38,3 +45,4 @@ export default class Recommed extends React.Component {
 		)
 	}
 }
+export default withRouter(Recommend);
