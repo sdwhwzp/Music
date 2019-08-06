@@ -1,7 +1,9 @@
 import React from 'react'
 import axios from  'axios'
-export default class Recommed extends React.Component {
+import  {withRouter} from 'react-router-dom'
+ class Recommend extends React.Component {
 	componentWillMount() {
+		console.log(this.props.match.params)
 		axios.get("/music/singList",{
 			params:{
 				disstid:3602407677
@@ -18,3 +20,4 @@ export default class Recommed extends React.Component {
 		)
 	}
 }
+export default withRouter(Recommend)

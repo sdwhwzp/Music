@@ -22,11 +22,12 @@ export default class Home extends React.Component {
 
 	render(){
 		return(
-			<div>
-
+			<div className={"context"}>
 				<Components.Section></Components.Section>
 				<div className={'section-two'}></div>
 				<div className={'section-four'}>
+
+
 					{
 						this.state.songlist.map((item,index)=>{
 							return(
@@ -59,12 +60,6 @@ export default class Home extends React.Component {
 					<input type="button" value={"加载更多"}/>
 
 				</div>
-
-				<NavLink to={"/search"}>搜索</NavLink>
-				首页
-				<NavLink className={"singer"} to={"/singer"}>歌手</NavLink>
-				<NavLink to={"/rankingList"}>排行榜</NavLink>
-				<NavLink to={"/recommend"}>歌单</NavLink>
 
 				{
 					this.state.songlist.map((item,index)=>{

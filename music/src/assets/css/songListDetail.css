@@ -1,0 +1,32 @@
+ .songListDetail{
+
+    width: 100%;
+    height: 100%;
+}
+ .songListDetail p{
+     margin: 0 auto;
+     width: 60%;
+     text-align: center;
+ }
+.songListDetail p:nth-child(2){
+    margin: 0 auto;
+    width: 209px;
+    height: 209px;
+}
+.songListDetail .detail{
+    height: 46px;
+    overflow: auto;
+    text-overflow: ellipsis;
+}
+.songListDetail p img{
+    width: 209px;
+}
+ .songListDetail a{
+     width: 100%;
+    display: inline-block;
+   color:#eaeaea;
+ }
+ .songListDetail a div{
+
+     color:black;
+ }

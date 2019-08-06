@@ -11,11 +11,9 @@
     top: 1%;
     left: 1%;
 }
-#route #Login .logo {
-    margin-top: 0;
-}
+
 #Login .logo img{
-    margin-top: 10%;
+    margin-top: 36%;
     margin-bottom: 200px;
     width: 150px;
 
@@ -54,7 +52,7 @@
 }
 
 #Logon .logo img{
-    margin-top: 10%;
+    margin-top: 34%;
     margin-bottom: 14%;
     width: 150px;
 

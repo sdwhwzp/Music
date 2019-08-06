@@ -30,17 +30,29 @@ footer .nav i{
 }
 .my {
     width: 100%;
+    margin-bottom: 50px;
 }
 .my .login{
     display: block;
+    margin: 0 auto;
     background: greenyellow;
     width: 20%;
     text-align: center;
-    position: absolute;
-    left: 40%;
+
     border-radius: 10px;
 }
-#route div:nth-child(2){
-    margin-bottom: 50px;
-    margin-top: 70px;
+.my img{
+    width: 200px;
+}
+.my ul li{
+    margin-right: 2px;
+}
+.my a{
+    display: block;
+    font-size: 14px;
+}
+.my ul{
+    display:flex ;
+    width: 100%;
+    overflow: auto;
 }
