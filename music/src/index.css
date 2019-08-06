@@ -83,3 +83,84 @@ width: 60px;
 .sel{
   color: #31c27c;
 }
+.song .header{
+  position: absolute;
+  z-index: 1;
+  color: white;
+}
+.song .header h4{
+  font-size: 28px;
+  width: 375px;
+  text-align: center;
+  margin-top: -14px;
+}
+.song .list-wrapper{
+  height: 500px;
+  position:fixed;
+  top:350px;
+  bottom: 0px;
+  width: 375px;
+
+}
+.song .list-wrapper ul{
+  padding-left: 25px;
+}
+.song .list-wrapper ul li{
+  height: 60px;
+  padding-top: 10px;
+  position: relative;
+}
+.song .list-wrapper ul li:nth-child(1){
+  height: 30px;
+  font-size: 16px;
+  padding-left: 100px;
+}
+.song .list-wrapper ul li h1,p{
+  margin: 0px;
+}
+.song .list-wrapper ul li h1{
+  font-size: 15px;
+  font-weight: 500;
+}
+.song .list-wrapper ul li span{
+  font-size:12px ;
+  color:grey;
+}
+.song{
+  position: fixed;
+  top: 0px;
+  bottom:0px;
+}
+.song .shadow{
+  position: absolute;
+  top: 300px;
+  width: 375px;
+  background: #eaffea;
+  height: 667px;
+}
+.song .header{
+  z-index: 2;
+}
+.song .list-wrapper{
+  position: fixed;
+  top: 300px;
+  bottom: 0;
+}
+#iconfont{
+  width: 20px;
+  top: 19px;
+  left:300px;
+  position: absolute;
+
+
+}
+.song .img{
+  position: relative;
+  transform-origin:top;
+  background-size:cover;
+
+  height: 300px;
+  width: 375px;
+}
+
+
