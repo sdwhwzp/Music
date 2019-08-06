@@ -21,8 +21,12 @@ class Section extends React.Component{
                             <span className={'two'}  onClick={()=>{
                                 this.props.history.push('/rankingList')
                             }}>排行榜</span>
-                    </NavLink>
-
+                        </NavLink>
+                        <NavLink style={{color:"#555"}} to={"/recommend"}>
+                            <span className={'two'}  onClick={()=>{
+                                this.props.history.push('/recommend')
+                            }}>推荐</span>
+                        </NavLink>
                     </Router>
                 </div>
 
