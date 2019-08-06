@@ -12,20 +12,20 @@ class Section extends React.Component{
             <div className={'section'}>
                 <div className={'section-one'}>
                     <Router>
-                        <NavLink style={{color:"#31c27c"}}  to={"/singer"}>
+                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}}  to={"/"}>
                             <span  className={'one'}  onClick={()=>{
                                 this.props.history.push('/singer')
                             }}>歌手</span>
                         </NavLink>
-                        <NavLink style={{color:"#555"}} to={"/rankingList"}>
+                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}} to={"/rankingList"}>
                             <span className={'two'}  onClick={()=>{
                                 this.props.history.push('/rankingList')
                             }}>排行榜</span>
                         </NavLink>
-                        <NavLink style={{color:"#555"}} to={"/recommend"}>
+                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}} to={"/recommend"}>
                             <span className={'two'}  onClick={()=>{
                                 this.props.history.push('/recommend')
-                            }}>推荐</span>
+                            }}>歌单</span>
                         </NavLink>
                     </Router>
                 </div>
