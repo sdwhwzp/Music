@@ -19,6 +19,7 @@ export default class Home extends React.Component {
 	render(){
 		console.log(this.state.slider)
 		return(
+<<<<<<< HEAD
 			<div >
 				<Components.Section></Components.Section>
 				<div className="swiper-container">
@@ -58,6 +59,59 @@ export default class Home extends React.Component {
 						}
 					</div>
 				</div>
+=======
+			<div className={"context"}>
+				<Components.Section></Components.Section>
+
+				<div className={'section-four'}>
+
+					<div className={'section-two'}></div>
+					{
+						this.state.songlist.map((item,index)=>{
+							return(
+								<div key={item.cur_count}>
+									<h3>{item.cur_count}:{item.data.albumname}</h3>
+									<span>{item.data.interval}%:{item.data.albumdesc}:</span>
+								</div>
+							)
+						})
+					}
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+					<input type="button" value={"加载更多"}/>
+
+				</div>
+
+				{
+					this.state.songlist.map((item,index)=>{
+						return(
+							<div key={item.cur_count}>
+								<h3>{item.cur_count}:{item.data.albumname}</h3>
+								<span>{item.data.interval}%:{item.data.albumdesc}:</span>
+							</div>
+						)
+					})
+				}
+
+
+>>>>>>> 4eb6035defde6fc8c726e22b17e464af510e319c
 			</div>
 		)
 	}

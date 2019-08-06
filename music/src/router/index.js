@@ -8,6 +8,7 @@ import SongList from "./songList";
 import search from './search'
 import rankingList from './rankingList'
 import rankingListDetail from "./rankingListDetail"
+import singListDetail from './singListDetail'
 export default [
     ...home,
     ...recommend,
@@ -17,9 +18,9 @@ export default [
     ...SongList,
     ...logon,
     ...search,
-
     ...rankingList,
-    ...rankingListDetail
+    ...rankingListDetail,
+    ...singListDetail
 
 ]
 

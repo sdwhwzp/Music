@@ -9,6 +9,7 @@ import Components from './components'
 import log from './comonentsWrap/guardRouter'
 import {connect} from 'react-redux'
 import login from './store/actionCreator/login'
+import singList from './store/actionCreator/singlist'
 import axios from 'axios'
 class App extends React.Component {
 	componentWillMount() {
@@ -44,8 +45,22 @@ function mapSateToProps(state) {
 			login.changeLog(dispatch)
 		},
 		getLogin(info,vm) {
-
 			login.getLogin(dispatch, info,vm)
+		},
+		getSingList(cb){
+			singList.getSingList(dispatch,function (state) {
+					cb(state)
+			})
+		},
+		getSingListTwo(cb){
+			singList.getSingListTwo(dispatch,function (state) {
+				cb(state)
+			})
+		},
+		getSingListDetail(disstid,cb) {
+			singList.getSingListDetail(dispatch,disstid,function (state) {
+				cb(state)
+			})
 		}
 	}
 }
