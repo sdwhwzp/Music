@@ -10,7 +10,7 @@ export default [
         },
         meta:{
             title:"推荐",
-            isfooter:true
+            isFooter:true
         }
     }
 

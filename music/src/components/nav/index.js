@@ -16,8 +16,8 @@ export default class Nav extends React.Component{
 				{router.map((v, i) => {
 					return (
 							<span key={i} className={'nav'}>
-							{<NavLink exact={v.exact} style={{color: 'gray'}} activeStyle={{color: "green"}}to={v.to}><i className={"icon iconfont " + " " + v.iconfont}></i>{v.context}
-								</NavLink>}
+							{v.meta.isFooter ?<NavLink exact={v.exact} style={{color: 'gray'}} activeStyle={{color: "green"}}to={v.to}><i className={"icon iconfont " + " " + v.iconfont}></i>{v.context}
+								</NavLink> : null}
 
 						</span>
 

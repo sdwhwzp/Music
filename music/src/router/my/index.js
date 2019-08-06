@@ -8,7 +8,7 @@ export default [
         context:"我的",
         meta:{
             title:"我的",
-            isfooter:true
+            isFooter:true
         },
         children:{
 

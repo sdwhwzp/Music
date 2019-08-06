@@ -8,13 +8,11 @@ import {
     Route
 } from 'react-router-dom'
  class Top extends React.Component{
-    componentDidMount() {
-        console.log(11111,this.props)
-    }
-
+ //    componentDidMount() {
+ //        console.log(11111,this.props)
+ // }
     render() {
         return (
-            <div>
                 <header>
                     <span className={'top'}>
                         <img height={"35px"} src={require("../../assets/img/logo-nav.png")} alt=""/>
@@ -29,7 +27,6 @@ import {
                     </span>
 
                 </header>
-            </div>
         )
 }
 }

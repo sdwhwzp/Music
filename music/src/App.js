@@ -6,7 +6,7 @@ import {
 	NavLink
 } from 'react-router-dom'
 import Components from './components'
-import log from './comonentsWrap'
+import log from './comonentsWrap/guardRouter'
 import {connect} from 'react-redux'
 import login from './store/actionCreator/login'
 import axios from 'axios'
@@ -16,14 +16,17 @@ class App extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+			<>
+
+
+
 				<nav >
 					<Router >
-						<Components.navRoute {...this.props} style={{height:"100%"}}></Components.navRoute>
-						<Components.nav ></Components.nav>
+						<Components.navRoute {...this.props} style={{height:"100%"}}><Components.Top></Components.Top><Components.nav ></Components.nav></Components.navRoute>
+
 					</Router>
 				</nav>
-			</div>
+			</>
 
 
 

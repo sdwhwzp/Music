@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 a{
   text-decoration: none;
 }
@@ -29,17 +34,27 @@ code {
   line-height: 60px;
   width: 100%;
   padding-bottom: 5px;
-  /*background: red;*/
 
 }
+.singer-list{
 
+  background: #eaffea;
+}
+.swipe{
+  position: fixed;
+  top: 45px;
+  width: 100%;
+  height: 1000px;
+  background: #eaffea;
+  overflow: hidden;
+}
 .singer-list .indexname{
   height: 30px;
   line-height: 30px;
 }
-.singer-list ol,ul{
+.singer-list ol,.singer_name{
   padding-left: 10px;
-
+  margin-top: 0px;
 }
 .singer-list span{
   padding-left: 10px;
@@ -50,6 +65,8 @@ code {
   border-radius: 30px;
 }
 .singer-top{
+
+  width: 100%;
   position: fixed;
   top: 0;
 }
@@ -64,7 +81,7 @@ header{
   box-shadow: 0 5px 5px rgba(0,0,0,.02);
   background: #fff;
   height: 70px;
-  padding: 0 10px;
+  /*padding: 0 10px;*/
 }
 .box{
   text-align: center;
@@ -74,10 +91,10 @@ header{
 .section{
   width: 100%;
   display: -webkit-box;
-  position: absolute;
-  top: 70px;
 }
 .section-one{
+  position: absolute;
+  top: 70px;
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -96,18 +113,34 @@ header{
   padding:0 60px;
 }
 .section-two{
- position: relative;
-  top: 40px;
+  position: relative;
   height: 175px;
   background: #404040;
 }
 .section-four{
-  position: relative;
-  top: 22px;
   height: 100%;
 }
 
-/*.section{*/
-/*  height: 80%;*/
-/*  background: #404040;*/
+/*  background: white;*/
+/*  z-index: 2;*/
 /*}*/
+.leftnav{
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  font-size: 12px;
+  padding-left: 0;
+  text-align: center;
+  background: #ffffff;
+}
+.leftnav li{
+  padding-bottom: 4px;
+  font-weight: 600;
+}
+.sel{
+  color: #31c27c;
+}
+
+
