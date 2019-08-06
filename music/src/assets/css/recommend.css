@@ -1,0 +1,17 @@
+.songSheetList{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+.songSheetList .songSheetList_l{
+    width: 94%;
+    margin:10px auto;
+}
+.songSheetList .songSheetList_l img {
+    width: 80%;
+    margin-left: 10%;
+}
+.songSheetList .songSheetList_l p{
+    width: 100%;
+    text-align: center;
+}

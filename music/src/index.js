@@ -6,6 +6,7 @@ import './assets/css/my.css'
 import './assets/css/login.css'
 import "./assets/css/rankingList.css"
 import "./assets/css/search.css"
+import "./assets/css/recommend.css"
 import App from './App';
 import  {Provider} from 'react-redux'
 import store from './store'

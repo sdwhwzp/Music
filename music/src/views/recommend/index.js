@@ -1,6 +1,12 @@
 import React from 'react'
 import axios from  'axios'
 export default class Recommed extends React.Component {
+	constructor(){
+		super();
+		this.state={
+			songSheetList:[]
+		}
+	}
 	componentWillMount() {
 		axios.get("/music/singList",{
 			params:{
@@ -8,13 +14,27 @@ export default class Recommed extends React.Component {
 			}
 		})
 			.then(({data})=>{
-				console.log(data)
+				console.log(data);
+				this.setState({
+					songSheetList:data.data.list
+				});
+				console.log(this.state.songSheetList);
 			})
 	}
-
 	render(){
 		return(
-			<div>推荐</div>
+			<div className={"songSheetList"}>
+				{
+					this.state.songSheetList.map((v,i)=>{
+						return(
+							<div key={i} className={"songSheetList_l"}>
+								<img src={v.imgurl} alt=""/>
+								<p>{v.dissname}</p>
+							</div>
+						)
+					})
+				}
+			</div>
 		)
 	}
 }

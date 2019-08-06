@@ -25,8 +25,9 @@ export default class Home extends React.Component {
 			<div>
 
 				<Components.Section></Components.Section>
-				<div className={'section-two'}></div>
+
 				<div className={'section-four'}>
+					<div className={'section-two'}></div>
 					{
 						this.state.songlist.map((item,index)=>{
 							return(
@@ -60,22 +61,9 @@ export default class Home extends React.Component {
 
 				</div>
 
-				<NavLink to={"/search"}>搜索</NavLink>
-				首页
-				<NavLink className={"singer"} to={"/singer"}>歌手</NavLink>
-				<NavLink to={"/rankingList"}>排行榜</NavLink>
-				<NavLink to={"/recommend"}>歌单</NavLink>
 
-				{
-					this.state.songlist.map((item,index)=>{
-						return(
-							<div key={item.cur_count}>
-								<h3>{item.cur_count}:{item.data.albumname}</h3>
-								<span>{item.data.interval}%:{item.data.albumdesc}:</span>
-							</div>
-						)
-					})
-				}
+
+
 
 
 			</div>

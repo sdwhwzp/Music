@@ -1,6 +1,7 @@
 .rankingList{
     width: 100%;
 }
+
 .rankingList_list{
     width: 100%;
     height: auto;
@@ -31,4 +32,58 @@
     margin:2px;
     white-space: nowrap;
     overflow: hidden;
+}
+
+
+
+#rankingListDetail{
+    width: 100%;
+    background: #eef;
+}
+#rankingListDetail .rankingListDetailHead{
+    width: 100%;
+}
+#rankingListDetail .rankingListDetailHead>#rankingListDetailImg{
+    width: 50%;
+    margin: 10px auto;
+    margin-left: 25%;
+}
+#rankingListDetail .rankingListDetailHead>p{
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+#rankingListDetail .rankingListDetailList{
+    width: 100%;
+}
+#rankingListDetail .rankingListDetailList .songList-list{
+    margin:5px;
+}
+#rankingListDetail .rankingListDetailList .songList-list .songname{
+    font-size: 16px;
+    color: #000;
+}
+#rankingListDetail .rankingListDetailList .songList-list .songname span{
+    padding: 20px;
+}
+
+
+#rankingListDetail .rankingListDetailList .songList-list .singerall{
+    padding-left: 10px;
+}
+#rankingListDetail .rankingListDetailList .songList-list .singerall b{
+    padding-right: 5px;
+    font-weight: normal;
+    color:#333;
+}
+#rankingListDetail .rankingListDetailList .songList-list .singerall .singer{
+    margin: 3px;
+    font-size: 12px;
+    color:#555;
+
+}
+#rankingListDetail .rankingListDetailList .songList-list:nth-child(1) .singerall b,
+#rankingListDetail .rankingListDetailList .songList-list:nth-child(2) .singerall b,
+#rankingListDetail .rankingListDetailList .songList-list:nth-child(3) .singerall b{
+    color:#f00;
 }

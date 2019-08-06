@@ -25,7 +25,7 @@ class Section extends React.Component{
                         <NavLink style={{color:"#555"}} to={"/recommend"}>
                             <span className={'two'}  onClick={()=>{
                                 this.props.history.push('/recommend')
-                            }}>推荐</span>
+                            }}>歌单</span>
                         </NavLink>
                     </Router>
                 </div>

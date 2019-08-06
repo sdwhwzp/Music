@@ -15,30 +15,39 @@ class RankingList extends React.Component{
     render() {
         return (
             <div className={"rankingList"}>
-                排行榜
-                {
-                    this.state.topList.map((v,i)=>{
-                        return(
-                            <div key={i} className={"rankingList_list"}>
-                                <img src={v.picUrl} alt="" onClick={()=>{
-                                    this.props.history.push("/rankingListDetail")
-                                }}/>
-                                <div className={"rankingList_intro"}>
-                                    <p className={"topTitle"}>{v.topTitle}</p>
-                                    <div>
-                                        {
-                                            v.songList.map((v,i)=>{
-                                                return (
-                                                    <p key={i} className={"songList"}>{v.songname}-{v.singername}</p>
-                                                )
-                                            })
-                                        }
+                <div>
+                    <p className={"iconfont icon-navbankicon"} onClick={()=>{this.props.history.go(-1)}}></p>
+                    <h3>巅峰榜</h3>
+                </div>
+                    {
+                        this.state.topList.map((v,i)=>{
+                            return(
+                                <div key={i} className={"rankingList_list"}>
+                                    <img src={v.picUrl} alt="" onClick={()=>{
+                                        this.props.history.push({
+                                            pathname:"/rankingListDetail",
+                                            state:{
+                                                topid:v.id
+                                            }
+                                        })
+                                    }}/>
+                                    <div className={"rankingList_intro"}>
+                                        <p className={"topTitle"}>{v.topTitle}</p>
+                                        <div>
+                                            {
+                                                v.songList.map((v,i)=>{
+                                                    return (
+                                                        <p key={i} className={"songList"}>{v.songname}-{v.singername}</p>
+                                                    )
+                                                })
+                                            }
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
+
             </div>
         )
     }
