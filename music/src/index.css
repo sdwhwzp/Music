@@ -20,6 +20,7 @@ html,body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+
   padding: 0;
   width: 100%;
   height: 100%;
@@ -73,15 +74,17 @@ header{
   top: 0;
   background: #fff;
   height: 70px;
-  width: 100%;
+
 }
 .top{
-  display: -webkit-box;
-  -webkit-box-pack: justify;
-  -webkit-box-align: center;
-  box-shadow: 0 5px 5px rgba(0,0,0,.02);
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0px;
   height: 70px;
   padding: 0 30px;
+
+  z-index: 999;
 }
 .box{
   margin:5px 5px 0 10px;
@@ -91,7 +94,7 @@ header{
 }
 .section{
   width: 100%;
-  height: 7rem;
+  height: 10%;
   overflow: hidden;
 }
 .section-one{
@@ -114,10 +117,10 @@ header{
   text-decoration: none;
   padding:0 60px;
 }
-.section-two{
+.swiper .section-two{
   position: relative;
   height: 175px;
-<<<<<<< HEAD
+
 }
 .section-two img{
   overflow: hidden;
@@ -136,21 +139,32 @@ header{
   padding: 5px;
 }
 .swiper-container{
-  height: 175px;
+  width: 100%;
+  position: static;
+  margin-top: 70px;
 }
 .swiper-container img{
-  height: 175px;
-=======
+
+  width: 100%;
+
   background: #404040;
 
 
->>>>>>> 4eb6035defde6fc8c726e22b17e464af510e319c
+
+  height: 175px;
+  background: #404040;
+
+
+
 }
 .section-four{
   position: relative;
   top: 40px;
   height: 100%;
+
 }
+
+
 
 /*  background: white;*/
 /*  z-index: 2;*/
@@ -173,5 +187,96 @@ header{
 .sel{
   color: #31c27c;
 }
+.context{
+  margin-bottom: 50px;
+}
+.song{
+  width:100%;
+}
+.song .header{
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  color: white;
+}
+/*.song .iconfont{*/
+/*font-size: 25px;*/
+/*}*/
+.song .header h4{
+  font-size: 28px;
+  width: 100%;
+  text-align: center;
+  margin-top: -14px;
+}
+.song .list-wrapper{
+  height: 500px;
+  position:fixed;
+  top:350px;
+  bottom: 0px;
+  width: 100%;
 
+}
+.song .list-wrapper ul{
+  padding-left: 25px;
+}
+.song .list-wrapper ul li{
+  height: 60px;
+  padding-top: 10px;
+  position: relative;
+}
+.song .list-wrapper ul li:nth-child(1){
+  height: 30px;
+  font-size: 16px;
+  padding-left: 100px;
+}
+.song .list-wrapper ul li h1,p{
+  margin: 0px;
+  width:280px;
+  display: inline-block;
+  white-space: nowrap;
 
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.song .list-wrapper ul li h1{
+  font-size: 15px;
+  font-weight: 500;
+}
+.song .list-wrapper ul li span{
+  font-size:12px ;
+  color:grey;
+}
+.song{
+  position: fixed;
+  top: 0px;
+  bottom:0px;
+}
+.song .shadow{
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  background: #eaffea;
+  height: 900px;
+}
+.song .header{
+  z-index: 2;
+}
+.song .list-wrapper{
+  position: fixed;
+  top: 300px;
+  bottom: 0;
+}
+#iconfont {
+  width: 20px;
+  top: 19px;
+  right: 30px;
+  position: absolute;
+}
+.song .img{
+  position: relative;
+  transform-origin:top;
+  background-size:cover;
+
+  height: 300px;
+  width: 100%;
+}
