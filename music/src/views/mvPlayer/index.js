@@ -32,18 +32,30 @@ class Mv extends React.Component{
 
 		})
 		this.props.getMvDiscuss(id,this.state.pageSize,function (state) {
-
+			console.log(state.mv.mvDiscuss)
+			let mvDiscuss
+			if (state.mv.mvDiscuss === undefined) {
+				mvDiscuss=[]
+			}else {
+				mvDiscuss=state.mv.mvDiscuss
+			}
 			_me.setState({
-
-				mvDiscuss:state.mv.mvDiscuss
+				mvDiscuss
 			})
 
 		})
 		this.props.getMvDetail(id,function (state) {
-			console.log(state.mv.mvDetail[id],222)
+			// console.log(state.mv.mvDetail[id],222)
+			let singers
+			console.log(state.mv.mvDetail[id].singers["0"])
+			if (state.mv.mvDetail[id].singers["0"]===undefined) {
+				singers="该MV已下架"
+			}else {
+				singers=state.mv.mvDetail[id].singers["0"].name
+			}
 			_me.setState({
 				mvDetail:state.mv.mvDetail[id],
-				singer:state.mv.mvDetail[id].singers["0"].name
+				singer:singers
 			})
 		})
 	}
@@ -64,9 +76,15 @@ class Mv extends React.Component{
 		const _me=this
 		this.state.pageSize=this.state.pageSize+10
 		this.props.getMvDiscuss(this.state.id,this.state.pageSize,function (state) {
-			console.log(state.mv.mvDiscuss)
+
+			let mvDiscuss
+			if (state.mv.mvDiscuss === undefined) {
+				mvDiscuss=[]
+			}else {
+				mvDiscuss=state.mv.mvDiscuss
+			}
 			_me.setState({
-				mvDiscuss:state.mv.mvDiscuss
+				mvDiscuss
 			})
 		})
 	}
