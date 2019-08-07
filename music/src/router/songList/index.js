@@ -3,7 +3,7 @@ import SongList from '../../views/singer/songList'
 export default [
     {
         to:"/songlist",
-        path:"/songlist",
+        path:"/songlist/:id/:name",
         component:SongList,
         context:"",
         meta:{

@@ -9,6 +9,7 @@ import search from './search'
 import rankingList from './rankingList'
 import rankingListDetail from "./rankingListDetail"
 import singListDetail from './singListDetail'
+import player from './player'
 export default [
     ...home,
     ...recommend,
@@ -20,7 +21,8 @@ export default [
     ...search,
     ...rankingList,
     ...rankingListDetail,
-    ...singListDetail
+    ...singListDetail,
+    ...player
 
 ]
 

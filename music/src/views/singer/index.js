@@ -14,7 +14,7 @@ class Singer extends React.Component {
             nameList:{},
             sel:"A",
             starty:0,
-            top:145
+            top:140
         }
 
     }
@@ -75,12 +75,14 @@ class Singer extends React.Component {
                                                 this.state.nameList[key].map((v,i)=>{
                                                     return(
                                                             <li key={i} onClick={()=>{
-                                                                this.props.history.push('/songlist')
+                                                                this.props.history.push({
+                                                                    pathname:`/songlist/${v.Fsinger_mid}/${v.Fsinger_name}`,
+
+                                                                })
                                                             }}>
                                                                 <img src={v.avator} alt=""/>
                                                                 <span>{v.Fsinger_name}</span>
                                                             </li>
-
                                                     )
                                                 })
                                             }
@@ -148,12 +150,17 @@ class Singer extends React.Component {
     select(key){//通过A,B,C,D等key值更改sel的classname
         this.setState({
             sel:key
+        },()=>{
+            this.scrollItem(key)
+
         })
-        this.scrollItem(key)
+
+
     }
      scrollItem(key){//获取dom元素，通过scrollToElement到达所绑定的元素位置
          let el=this.refs[key]
          this.scroll.scrollToElement(el)
      }
+
 }
 export default withRouter(Singer)

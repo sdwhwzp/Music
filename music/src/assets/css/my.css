@@ -31,6 +31,7 @@ footer .nav i{
 .my {
     width: 100%;
     margin-bottom: 50px;
+    margin-top: 70px;
 }
 .my .login{
     display: block;
@@ -40,6 +41,10 @@ footer .nav i{
     text-align: center;
     border-radius: 10px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 .my img{
     width: 200px;
 }
@@ -54,4 +59,8 @@ footer .nav i{
     display:flex ;
     width: 100%;
     overflow: auto;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224

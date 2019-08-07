@@ -120,7 +120,10 @@ header{
 .swiper .section-two{
   position: relative;
   height: 175px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 }
 .section-two img{
   overflow: hidden;
@@ -144,6 +147,7 @@ header{
   margin-top: 70px;
 }
 .swiper-container img{
+<<<<<<< HEAD
 
   width: 100%;
 
@@ -156,6 +160,11 @@ header{
 
 
 
+=======
+  width: 100%;
+  background: #404040;
+  height: 175px;
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 }
 .section-four{
   position: relative;
@@ -165,7 +174,10 @@ header{
 }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 /*  background: white;*/
 /*  z-index: 2;*/
 /*}*/
@@ -190,6 +202,10 @@ header{
 .context{
   margin-bottom: 50px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 .song{
   width:100%;
 }
@@ -200,7 +216,11 @@ header{
   color: white;
 }
 /*.song .iconfont{*/
+<<<<<<< HEAD
 /*font-size: 25px;*/
+=======
+  /*font-size: 25px;*/
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 /*}*/
 .song .header h4{
   font-size: 28px;
@@ -214,6 +234,78 @@ header{
   top:350px;
   bottom: 0px;
   width: 100%;
+<<<<<<< HEAD
+=======
+
+}
+.song .list-wrapper ul{
+  padding-left: 25px;
+}
+.song .list-wrapper ul li{
+  height: 60px;
+  padding-top: 10px;
+  position: relative;
+}
+.song .list-wrapper ul li:nth-child(1){
+  height: 30px;
+  font-size: 16px;
+  padding-left: 100px;
+}
+.song .list-wrapper ul li h1,p{
+  margin: 0px;
+  width:280px;
+  display: inline-block;
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.song .list-wrapper ul li h1{
+  font-size: 15px;
+  font-weight: 500;
+}
+.song .list-wrapper ul li span{
+  font-size:12px ;
+  color:grey;
+}
+.song{
+  position: fixed;
+  top: 0px;
+  bottom:0px;
+}
+.song .shadow{
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  background: #eaffea;
+  height: 900px;
+}
+.song .header{
+  z-index: 2;
+}
+.song .list-wrapper{
+  position: fixed;
+  top: 300px;
+  bottom: 0;
+}
+#iconfont{
+  width: 20px;
+  top: 19px;
+  right:30px;
+  position: absolute;
+
+
+}
+.song .img{
+  position: relative;
+  transform-origin:top;
+  background-size:cover;
+
+  height: 300px;
+  width: 100%;
+}
+
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 
 }
 .song .list-wrapper ul{

@@ -5919,50 +5919,6 @@
     "MacListPicUrl": "http://y.gtimg.cn/music/common/upload/iphone_order_channel/20150820172427.jpg",
     "UpdateType": "1",
     "albuminfo": "",
-    "headPic_v12": "http://y.gtimg.cn/music/common/upload/iphone_order_channel/20150820174934.jpg",
-    }
-    {
-      "code": 0,
-      "data": {
-        "slider": [
-          {
-            "linkUrl": "http://y.qq.com/w/album.html?albummid=001IT2t12G90Wg",
-            "picUrl": "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1629368.jpg",
-            "id": 22454
-          },
-          {
-            "linkUrl": "https://y.qq.com/m/digitalbum/gold/index.html?openinqqmusic=1&_video=true&mid=002WAzsK3zOPmi&g_f=shoujijiaodian",
-            "picUrl": "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1631381.jpg",
-            "id": 22462
-          },
-          {
-            "linkUrl": "http://y.qq.com/w/album.html?albummid=000DMpJ73yeITP",
-            "picUrl": "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1629553.jpg",
-            "id": 22455
-          },
-          {
-            "linkUrl": "https://y.qq.com/m/act/thecomingone3/index.html?openinqqmusic=1&ADTAG=jiaodiantu",
-            "picUrl": "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1624303.jpg",
-            "id": 22373
-          },
-          {
-            "linkUrl": "http://y.qq.com/w/album.html?albummid=001OeiPX2GNfXT",
-            "picUrl": "http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1629883.jpg",
-            "id": 22461
-          }
-        ],
-        "radioList": [
-          {
-            "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_199_12_8.jpg",
-            "Ftitle": "热歌",
-            "radioid": 199
-          },
-          {
-            "picUrl": "http://y.gtimg.cn/music/photo/radio/track_radio_307_12_5.jpg",
-            "Ftitle": "一人一首招牌歌",
-            "radioid": 307
-          }
-        ],
-        "songList": []
-      }
-    },
+    "headPic_v12": "http://y.gtimg.cn/music/common/upload/iphone_order_channel/20150820174934.jpg"
+  }
+}

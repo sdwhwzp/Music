@@ -1,0 +1,4 @@
+export default function song(id){
+    return `http://dl.stream.qqmusic.qq.com/C400${id}.m4a?guid=1656968095&vkey=D0CAA6F701A4BFA5568E2EC178920B7A200A187D7DFB3D9AC04D292B61DB23C13B5D6809D3FA98005D903DD651C23EFCC001920A536EC8EF&uin=0&fromtag=38`
+
+}//封装一个歌曲播放路径

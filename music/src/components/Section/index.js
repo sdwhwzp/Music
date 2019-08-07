@@ -12,7 +12,7 @@ class Section extends React.Component{
             <div className={'section'}>
                 <div className={'section-one'}>
                     <Router>
-                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}}  to={"/"}>
+                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}}  to={"/singer"}>
                             <span  className={'one'}  onClick={()=>{
                                 this.props.history.push('/singer')
                             }}>歌手</span>
