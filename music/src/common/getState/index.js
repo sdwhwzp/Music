@@ -6,15 +6,15 @@ export default function getState(state){
     for (let i=0;i<state.ListSinger.length;i++) {//遍历state将state中的元素按首字母分类
                 let el = state.ListSinger[i];
                 el.avator=singerSrc(el.Fsinger_mid)
-                let {Findex,Fsinger_name,avator}=el;
+                let {Findex,Fsinger_name,avator,Fsinger_mid}=el;
                 if(i<10){
-                    hot.push({Findex,Fsinger_name,avator})
+                    hot.push({Findex,Fsinger_name,avator,Fsinger_mid})
                 }
                 if(obj[el.Findex]){
-                    obj[el.Findex].push({Findex,Fsinger_name,avator})
+                    obj[el.Findex].push({Findex,Fsinger_name,avator,Fsinger_mid})
                 }else {
                     obj[el.Findex]=[]
-                    obj[el.Findex].push({Findex,Fsinger_name,avator})
+                    obj[el.Findex].push({Findex,Fsinger_name,avator,Fsinger_mid})
                 }
             }
             delete obj[9]
@@ -30,6 +30,6 @@ export default function getState(state){
         }
 
 
-
     return newObj
+
 }
