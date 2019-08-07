@@ -26,10 +26,9 @@ class SongList extends React.Component{
         this.scroll = new BS(".list-wrapper",{click:true,probeType:3})
         let img=this.refs.img
         let imgH=img.clientHeight
+        let style = null
         this.scroll.on('scroll',({y})=>{
             let shadow=this.refs.shadow
-
-
             let distence = Math.max(y,-imgH+40)
             if(y<=-imgH+40){
                 img.style.zIndex=1
@@ -48,6 +47,7 @@ class SongList extends React.Component{
     };
     render(){
         // console.log(this.state.songList)
+        console.log(111111111)
         return(
             <div className={"song"}>
                 {
