@@ -46,8 +46,8 @@ class SongList extends React.Component{
 
     };
     render(){
-        // console.log(this.state.songList)
-        console.log(111111111)
+        console.log(this.state.songList)
+        // console.log(111111111)
         return(
             <div className={"song"}>
                 {
