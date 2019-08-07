@@ -8,7 +8,7 @@ export  default class NavRoute extends React.Component {
 		super(props)
 	}
 	componentWillMount() {
-		console.log(this.props)
+
 	}
 
 	render() {

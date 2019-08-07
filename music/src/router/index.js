@@ -10,6 +10,7 @@ import rankingList from './rankingList'
 import rankingListDetail from "./rankingListDetail"
 import singListDetail from './singListDetail'
 import player from './player'
+import songPlay from "./songPlay"
 export default [
     ...home,
     ...recommend,
@@ -22,7 +23,8 @@ export default [
     ...rankingList,
     ...rankingListDetail,
     ...singListDetail,
-    ...player
+    ...player,
+    ...songPlay
 
 ]
 
