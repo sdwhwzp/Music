@@ -8,9 +8,13 @@ class RankingListDetail extends React.Component{
         super();
         this.state={
             songList:[],
-            topInfo:[]
+            topInfo:[],
+            id:''
         };
 
+    }
+    mvPlayer(id){
+        this.props.history.push('/mvplayer/'+id)
     }
     render(){
         return(
@@ -23,13 +27,17 @@ class RankingListDetail extends React.Component{
                 <div className={"rankingListDetailList"}>
                     {
                         this.state.songList.map((v,i)=>{
+                            console.log(v)
                             return(
                                 <div key={i} className={"songList-list"}>
                                     <p className={"songname"}><span>{v.cur_count}</span>{v.data.albumname}</p>
+                                    {v.data.vid!==""?<input type="button" value={"mv"} style={{float:"right"}} onClick={this.mvPlayer.bind(this,v.data.vid)}/>:null}
                                     <p className={"singerall"}>
                                         <b>{v.data.interval}%</b>
                                         {
                                             v.data.singer.map((v,i)=>{
+
+
                                                 return(
                                                     <span key={i} className={"singer"}>
                                                         {v.name}

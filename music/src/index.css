@@ -219,12 +219,19 @@ header{
   font-size: 16px;
   padding-left: 100px;
 }
-.song .list-wrapper ul li h1,p{
+.song .list-wrapper ul li p{
   margin: 0px;
   width:280px;
   display: inline-block;
   white-space: nowrap;
-
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.song .list-wrapper ul li h1{
+  margin: 0px;
+  width:280px;
+  display: inline-block;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow:ellipsis;
 }
@@ -257,12 +264,11 @@ header{
   bottom: 0;
 }
 #iconfont{
+  font-size: 20px;
   width: 20px;
   top: 19px;
   right:30px;
   position: absolute;
-
-
 }
 .song .img{
   position: relative;

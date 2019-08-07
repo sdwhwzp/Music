@@ -1,0 +1,55 @@
+#route .mvList{
+
+    width: 100%;
+
+    margin:70px auto 50px;
+}
+.mvList img{
+     width: 100%;
+ }
+.mvList a{
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: black;
+}
+.mvList div {
+    text-align: center;
+}
+.mvList input {
+    margin: auto;
+}
+.mv div p{
+    white-space: normal;
+    text-overflow: clip;
+    width: 100%;
+    text-indent: 2em;
+}
+.mv div {
+    text-align: center;
+}
+.mv div a{
+    color:black;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.mv .discuss p{
+    text-indent: 0;
+    white-space: normal;
+    text-overflow: clip;
+    width: 100%;
+    border:1px solid #eaeaea;
+    text-align: left;
+    height: 80%;
+    overflow: auto;
+}
+.mv .discuss p img{
+    width: 20px;
+}
+.mv .discuss p span{
+    display: block;
+}
+.mv .discuss{
+    text-align: center;
+}
