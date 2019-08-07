@@ -184,18 +184,28 @@ header{
 .sel{
   color: #31c27c;
 }
+<<<<<<< HEAD
 .context{
   margin-bottom: 50px;
 }
 
+=======
+.song{
+  width:100%;
+}
+>>>>>>> 7467ee6c6d4ad2f0b3e27c9702d4a6c977227ed5
 .song .header{
+  width: 100%;
   position: absolute;
   z-index: 1;
   color: white;
 }
+/*.song .iconfont{*/
+  /*font-size: 25px;*/
+/*}*/
 .song .header h4{
   font-size: 28px;
-  width: 375px;
+  width: 100%;
   text-align: center;
   margin-top: -14px;
 }
@@ -204,7 +214,7 @@ header{
   position:fixed;
   top:350px;
   bottom: 0px;
-  width: 375px;
+  width: 100%;
 
 }
 .song .list-wrapper ul{
@@ -245,9 +255,9 @@ header{
 .song .shadow{
   position: absolute;
   top: 300px;
-  width: 375px;
+  width: 100%;
   background: #eaffea;
-  height: 667px;
+  height: 900px;
 }
 .song .header{
   z-index: 2;
@@ -260,7 +270,7 @@ header{
 #iconfont{
   width: 20px;
   top: 19px;
-  left:300px;
+  right:30px;
   position: absolute;
 
 
@@ -271,7 +281,7 @@ header{
   background-size:cover;
 
   height: 300px;
-  width: 375px;
+  width: 100%;
 }
 
 
