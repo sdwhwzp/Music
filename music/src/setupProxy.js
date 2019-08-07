@@ -16,7 +16,13 @@ module.exports = function (app) {
             "^/qq": ""
         }
     }))
-
+	app.use("/music",proxy({
+		target:"http://127.0.0.1",
+		changeOrigin:true,
+		pathRewrite:{
+			"^/music":""
+		}
+	}))
 
 
 }

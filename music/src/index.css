@@ -20,6 +20,7 @@ html,body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+
   padding: 0;
   width: 100%;
   height: 100%;
@@ -73,15 +74,17 @@ header{
   top: 0;
   background: #fff;
   height: 70px;
-  width: 100%;
+
 }
 .top{
-  display: -webkit-box;
-  -webkit-box-pack: justify;
-  -webkit-box-align: center;
-  box-shadow: 0 5px 5px rgba(0,0,0,.02);
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0px;
   height: 70px;
   padding: 0 30px;
+
+  z-index: 999;
 }
 .box{
   margin:5px 5px 0 10px;
@@ -91,7 +94,7 @@ header{
 }
 .section{
   width: 100%;
-  height: 7rem;
+  height: 10%;
   overflow: hidden;
 }
 .section-one{
@@ -114,10 +117,9 @@ header{
   text-decoration: none;
   padding:0 60px;
 }
-.section-two{
+.swiper .section-two{
   position: relative;
   height: 175px;
-
 }
 .section-two img{
   overflow: hidden;
@@ -136,19 +138,22 @@ header{
   padding: 5px;
 }
 .swiper-container{
-  height: 175px;
+  width: 100%;
+  position: static;
+  margin-top: 70px;
 }
 .swiper-container img{
-  height: 175px;
+  width: 100%;
   background: #404040;
-
-
+  height: 175px;
 }
 .section-four{
   position: relative;
   top: 40px;
   height: 100%;
+
 }
+
 
 /*  background: white;*/
 /*  z-index: 2;*/
@@ -171,6 +176,10 @@ header{
 .sel{
   color: #31c27c;
 }
+.context{
+  margin-bottom: 50px;
+}
+
 .song{
   width:100%;
 }

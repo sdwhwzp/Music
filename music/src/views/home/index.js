@@ -16,12 +16,12 @@ export default class Home extends React.Component {
 
 		}
 	}
+
 	render(){
 		return(
-
 			<div >
 				<Components.Section></Components.Section>
-				<div className="swiper-container">
+				<div className="swiper-container" style={{marginTop:"110px"}}>
 					<div className="swiper-wrapper">
 						{
 							this.state.slider.map((v,i)=>{
@@ -35,85 +35,33 @@ export default class Home extends React.Component {
 					</div>
 					<div className='swiper-pagination'></div>
 				</div>
-				<div className={'section-four'}>
-					<div className={'section-three'}>
-						{
-							this.state.songlist.map((item,index)=>{
-								return(
-									<div key={item.cur_count}>
-										<h3>{item.cur_count}:{item.data.albumname}</h3>
-										<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}{
-											item.data.singer.map((item,index)=>{
-												return(
-													<div key={item.id} className={'sin'}>
-														歌手：{item.name}
-													</div>
-												)
-											})
-										}
-										</span>
-									</div>
-								)
-							})
-						}
-					</div>
-				</div>
 
-			<div className={"context"}>
-				<Components.Section></Components.Section>
-
-				<div className={'section-four'}>
-
-					<div className={'section-two'}></div>
+				<div className={'section-three'}>
 					{
 						this.state.songlist.map((item,index)=>{
 							return(
 								<div key={item.cur_count}>
 									<h3>{item.cur_count}:{item.data.albumname}</h3>
-									<span>{item.data.interval}%:{item.data.albumdesc}:</span>
+									<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}{
+										item.data.singer.map((item,index)=>{
+											return(
+												<div key={item.id} className={'sin'}>
+													歌手：{item.name}
+												</div>
+											)
+										})
+									}
+										</span>
 								</div>
 							)
 						})
 					}
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-
 				</div>
 
-				{
-					this.state.songlist.map((item,index)=>{
-						return(
-							<div key={item.cur_count}>
-								<h3>{item.cur_count}:{item.data.albumname}</h3>
-								<span>{item.data.interval}%:{item.data.albumdesc}:</span>
-							</div>
-						)
-					})
-				}
-
-
-			</div>
 			</div>
 		)
 	}
+
 	getListMore(pageIndex=1){
 		axios.get("/qq/v8/fcg-bin/fcg_v8_toplist_cp.fcg?pageNo="+pageIndex+"&topid=27")
 			.then(({data})=>{
@@ -122,13 +70,12 @@ export default class Home extends React.Component {
 				})
 			})
 	}
-	componentDidMount(){
-			this.getListMore()
-			axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=701075963&uin=0&format=json")
+	componentDidMount() {
+		this.getListMore();
+		axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?&format=json")
 			.then(({data})=>{
 				this.setState({
 					slider:data.data.slider
-
 				})
 				var mySwiper = new Swiper('.swiper-container', {
 					autoplay: true,
@@ -138,7 +85,5 @@ export default class Home extends React.Component {
 					}
 				});
 			})
-		}
-
-
+	}
 }
