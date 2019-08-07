@@ -120,7 +120,6 @@ header{
 .swiper .section-two{
   position: relative;
   height: 175px;
-
 }
 .section-two img{
   overflow: hidden;
@@ -144,16 +143,9 @@ header{
   margin-top: 70px;
 }
 .swiper-container img{
-
   width: 100%;
-
   background: #404040;
-
-
   height: 175px;
-  background: #404040;
-
-
 }
 .section-four{
   position: relative;
@@ -187,6 +179,10 @@ header{
 .context{
   margin-bottom: 50px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 .song{
   width:100%;
 }

@@ -17,50 +17,50 @@ export default class Home extends React.Component {
 		}
 	}
 
-		render(){
-			return(
-				<div >
-					<Components.Section></Components.Section>
-					<div className="swiper-container" style={{marginTop:"110px"}}>
-						<div className="swiper-wrapper">
-							{
-								this.state.slider.map((v,i)=>{
-									return(
-										<div className="swiper-slide" key={v.id}>
-											<img width={"100%"} src={v.picUrl} alt=""/>
-										</div>
-									)
-								})
-							}
-						</div>
-						<div className='swiper-pagination'></div>
+	render(){
+		return(
+			<div >
+				<Components.Section></Components.Section>
+				<div className="swiper-container" style={{marginTop:"110px"}}>
+					<div className="swiper-wrapper">
+						{
+							this.state.slider.map((v,i)=>{
+								return(
+									<div className="swiper-slide" key={v.id}>
+										<img width={"100%"} src={v.picUrl} alt=""/>
+									</div>
+								)
+							})
+						}
 					</div>
-
-						<div className={'section-three'}>
-							{
-								this.state.songlist.map((item,index)=>{
-									return(
-										<div key={item.cur_count}>
-											<h3>{item.cur_count}:{item.data.albumname}</h3>
-											<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}{
-												item.data.singer.map((item,index)=>{
-													return(
-														<div key={item.id} className={'sin'}>
-															歌手：{item.name}
-														</div>
-													)
-												})
-											}
-										</span>
-										</div>
-									)
-								})
-							}
-						</div>
-
+					<div className='swiper-pagination'></div>
 				</div>
-			)
-		}
+
+				<div className={'section-three'}>
+					{
+						this.state.songlist.map((item,index)=>{
+							return(
+								<div key={item.cur_count}>
+									<h3>{item.cur_count}:{item.data.albumname}</h3>
+									<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}{
+										item.data.singer.map((item,index)=>{
+											return(
+												<div key={item.id} className={'sin'}>
+													歌手：{item.name}
+												</div>
+											)
+										})
+									}
+										</span>
+								</div>
+							)
+						})
+					}
+				</div>
+
+			</div>
+		)
+	}
 
 	getListMore(pageIndex=1){
 		axios.get("/qq/v8/fcg-bin/fcg_v8_toplist_cp.fcg?pageNo="+pageIndex+"&topid=27")
