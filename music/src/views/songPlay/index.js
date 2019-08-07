@@ -9,7 +9,7 @@ class SongPlay extends React.Component{
         }
     }
     componentDidMount(){
-        axios.get(`/qq/tencent/url?id=${this.state.id}&quality=128`)
+        axios.get(`/itool/url?id=${this.state.id}&quality=128&isRedirect=0`)
             .then((data) => {
                 console.log(data)
             })

@@ -10,7 +10,12 @@ import rankingList from './rankingList'
 import rankingListDetail from "./rankingListDetail"
 import singListDetail from './singListDetail'
 import player from './player'
+
 import songPlay from "./songPlay"
+
+import mvlist from './mvlist'
+import mv from './mvPlayer'
+
 export default [
     ...home,
     ...recommend,
@@ -24,7 +29,12 @@ export default [
     ...rankingListDetail,
     ...singListDetail,
     ...player,
-    ...songPlay
+
+    ...songPlay,
+
+    ...mvlist,
+    ...mv
+
 
 ]
 

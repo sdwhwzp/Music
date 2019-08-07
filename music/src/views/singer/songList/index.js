@@ -18,17 +18,13 @@ class SongList extends React.Component{
                 let list=[]
                 for (let index=0; index < data.data.list.length; index++) {
                     let {albumname,songname,songmid}=data.data.list[index].musicData
-                    list.push({albumname,songname,songmid})
+                    let vid=data.data.list[index].vid
+                    list.push({albumname,songname,songmid,vid})
                 }
              this.setState({
                  songList:list
-             },()=>{
-                 console.log(this.state.songList)
              })
             })
-
-
-
         this.scroll = new BS(".list-wrapper",{click:true,probeType:3})
         let img=this.refs.img
         let imgH=img.clientHeight
@@ -74,6 +70,9 @@ class SongList extends React.Component{
 
         })
     }
+    play(obj){
+        this.props.history.push(`/mvplayer/${obj.Fvid}`)
+    }
     render(){
 
         return(
@@ -94,10 +93,11 @@ class SongList extends React.Component{
                                 {
                                     this.state.songList.map((v,i)=>{
                                         return(
-                                            <li key={i} className={i==this.state.sel?'sel':""} ref={i} onClick={this.song.bind(this,v,i)}>
-                                                <h1>{v.songname}</h1>
+
+                                            <li key={i} className={i==this.state.sel?'sel':""} >
+                                                <h1 ref={i} onClick={this.song.bind(this,v,i)}>{v.songname}</h1>
                                                 <p><span>{this.props.match.params.name}</span>  ·  <span>{v.albumname}</span></p>
-                                                <p className={"icon iconfont icon-bofang1"} id={"iconfont"}></p>
+                                                <p className={v.vid!==null&&v.vid.Fstatus!==null?"icon iconfont icon-bofang1":''} id={"iconfont"} onClick={this.play.bind(this,v.vid)}></p>
                                             </li>
                                         )
                                     })

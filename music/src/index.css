@@ -264,12 +264,11 @@ header{
   bottom: 0;
 }
 #iconfont{
+  font-size: 20px;
   width: 20px;
   top: 19px;
   right:30px;
   position: absolute;
-
-
 }
 .song .img{
   position: relative;

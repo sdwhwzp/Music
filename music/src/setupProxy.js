@@ -16,11 +16,11 @@ module.exports = function (app) {
             "^/qq": ""
         }
     }))
-	app.use("/music",proxy({
-		target:"http://127.0.0.1",
+	app.use("/itool",proxy({
+		target:"https://v1.itooi.cn/tencent",
 		changeOrigin:true,
 		pathRewrite:{
-			"^/music":""
+			"^/itool":""
 		}
 	}))
 
