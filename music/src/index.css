@@ -184,16 +184,12 @@ header{
 .sel{
   color: #31c27c;
 }
-<<<<<<< HEAD
 .context{
   margin-bottom: 50px;
 }
-
-=======
 .song{
   width:100%;
 }
->>>>>>> 7467ee6c6d4ad2f0b3e27c9702d4a6c977227ed5
 .song .header{
   width: 100%;
   position: absolute;
