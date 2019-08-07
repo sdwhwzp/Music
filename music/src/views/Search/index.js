@@ -39,7 +39,7 @@ class Search extends React.Component {
                             this.state.hotSearchList.map((v, i) => {
                                 return (
                                     <div key={i} className={"hotSearch"}>
-                                        <p>{v.k}</p>
+                                        <p ref={"hotSearch"}>{v.k}</p>
                                     </div>
                                 )
                             })
@@ -51,7 +51,7 @@ class Search extends React.Component {
         )
     }
 
-    componentWillMount() {
+    componentDidMount() {
         console.log(11111, this);
         axios.get("/qq/splcloud/fcgi-bin/gethotkey.fcg?g_tk=5381&uin=0&format=json")
             .then(({data}) => {

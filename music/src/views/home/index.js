@@ -17,9 +17,8 @@ export default class Home extends React.Component {
 		}
 	}
 	render(){
-		console.log(this.state.slider)
+		// console.log(this.state.slider)
 		return(
-<<<<<<< HEAD
 			<div >
 				<Components.Section></Components.Section>
 				<div className="swiper-container">
@@ -59,59 +58,13 @@ export default class Home extends React.Component {
 						}
 					</div>
 				</div>
-=======
-			<div className={"context"}>
-				<Components.Section></Components.Section>
+				<div className={"context"}>
+					<div className={'section-four'}>
 
-				<div className={'section-four'}>
+						<div className={'section-two'}></div>
 
-					<div className={'section-two'}></div>
-					{
-						this.state.songlist.map((item,index)=>{
-							return(
-								<div key={item.cur_count}>
-									<h3>{item.cur_count}:{item.data.albumname}</h3>
-									<span>{item.data.interval}%:{item.data.albumdesc}:</span>
-								</div>
-							)
-						})
-					}
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-					<input type="button" value={"加载更多"}/>
-
+					</div>
 				</div>
-
-				{
-					this.state.songlist.map((item,index)=>{
-						return(
-							<div key={item.cur_count}>
-								<h3>{item.cur_count}:{item.data.albumname}</h3>
-								<span>{item.data.interval}%:{item.data.albumdesc}:</span>
-							</div>
-						)
-					})
-				}
-
-
->>>>>>> 4eb6035defde6fc8c726e22b17e464af510e319c
 			</div>
 		)
 	}
@@ -125,11 +78,10 @@ export default class Home extends React.Component {
 	}
 	componentDidMount() {
 		this.getListMore();
-		axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=701075963&uin=0&format=json")
+		axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?&format=json")
 			.then(({data})=>{
 				this.setState({
 					slider:data.data.slider
-
 				})
 				var mySwiper = new Swiper('.swiper-container', {
 					autoplay: true,
@@ -139,7 +91,5 @@ export default class Home extends React.Component {
 					}
 				});
 			})
-		}
-
-
+	}
 }

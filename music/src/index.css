@@ -117,7 +117,6 @@ header{
 .section-two{
   position: relative;
   height: 175px;
-<<<<<<< HEAD
 }
 .section-two img{
   overflow: hidden;
@@ -140,11 +139,7 @@ header{
 }
 .swiper-container img{
   height: 175px;
-=======
   background: #404040;
-
-
->>>>>>> 4eb6035defde6fc8c726e22b17e464af510e319c
 }
 .section-four{
   position: relative;
