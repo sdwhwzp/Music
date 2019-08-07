@@ -65,8 +65,8 @@ class RankingListDetail extends React.Component{
                     songList:data.songlist,
                     topInfo:data.topinfo
                 });
-                console.log(this.state.songList);
-                console.log(this.state.topInfo);
+                // console.log(this.state.songList);
+                // console.log(this.state.topInfo);
             })
     }
 }

@@ -4,14 +4,20 @@
     padding: 0;
 }
 .songSheetList .songSheetList_l{
-    width: 94%;
+    width: 50%;
     margin:10px auto;
+    float: left;
 }
 .songSheetList .songSheetList_l img {
-    width: 80%;
-    margin-left: 10%;
+    width: 94%;
+    margin-left: 3%;
 }
 .songSheetList .songSheetList_l p{
     width: 100%;
     text-align: center;
+    font-size: 12px;
+    color: #333;
+}
+.songSheetList .songSheetList_l p:hover{
+    color:#41d3a4;
 }
