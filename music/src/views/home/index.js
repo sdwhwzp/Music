@@ -17,9 +17,8 @@ export default class Home extends React.Component {
 		}
 	}
 	render(){
-		console.log(this.state.slider)
 		return(
-<<<<<<< HEAD
+
 			<div >
 				<Components.Section></Components.Section>
 				<div className="swiper-container">
@@ -59,7 +58,7 @@ export default class Home extends React.Component {
 						}
 					</div>
 				</div>
-=======
+
 			<div className={"context"}>
 				<Components.Section></Components.Section>
 
@@ -111,7 +110,7 @@ export default class Home extends React.Component {
 				}
 
 
->>>>>>> 4eb6035defde6fc8c726e22b17e464af510e319c
+			</div>
 			</div>
 		)
 	}
@@ -123,9 +122,9 @@ export default class Home extends React.Component {
 				})
 			})
 	}
-	componentDidMount() {
-		this.getListMore();
-		axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=701075963&uin=0&format=json")
+	componentDidMount(){
+			this.getListMore()
+			axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?g_tk=701075963&uin=0&format=json")
 			.then(({data})=>{
 				this.setState({
 					slider:data.data.slider
