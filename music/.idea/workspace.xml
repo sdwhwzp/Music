@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="784494ba-350d-4cff-a7a0-ca0519ebcd50" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/css/mvlist.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/router/mvPlayer/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/router/mvlist/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/actionCreator/mv/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/actionType/mv/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/reducer/mv/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/store/state/mv/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/mvList/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/mvPlayer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../api/package-lock.json" afterPath="$PROJECT_DIR$/../api/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/songListDetail.css" afterPath="$PROJECT_DIR$/src/assets/css/songListDetail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Section/index.js" afterPath="$PROJECT_DIR$/src/components/Section/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/router/index.js" afterPath="$PROJECT_DIR$/src/router/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/setupProxy.js" afterPath="$PROJECT_DIR$/src/setupProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/reducer/index.js" afterPath="$PROJECT_DIR$/src/store/reducer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/singListdetail/index.js" afterPath="$PROJECT_DIR$/src/views/singListdetail/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/singer/index.js" afterPath="$PROJECT_DIR$/src/views/singer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/singer/songList/index.js" afterPath="$PROJECT_DIR$/src/views/singer/songList/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/songPlay/index.js" afterPath="$PROJECT_DIR$/src/views/songPlay/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,66 +15,38 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5188736">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/views/singer/songList/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                    <marker date="1565183742425" expanded="true" signature="2569:2788" ph="..." />
-                    <marker date="1565183742425" expanded="true" signature="2855:2873" ph="..." />
-                    <marker date="1565183742425" expanded="true" signature="3165:4248" ph="..." />
-                    <marker date="1565183742425" expanded="true" signature="3198:4217" ph="..." />
-                    <marker date="1565183742425" expanded="true" signature="3587:4069" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/views/songPlay/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                    <marker date="1565184255046" expanded="true" signature="494:539" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="setupProxy.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/setupProxy.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="setupProxy.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/setupProxy.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="19" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/singer/songList/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <marker date="1565183742425" expanded="true" signature="2569:2788" ph="..." />
+                <marker date="1565183742425" expanded="true" signature="2855:2873" ph="..." />
+                <marker date="1565183742425" expanded="true" signature="3165:4248" ph="..." />
+                <marker date="1565183742425" expanded="true" signature="3198:4217" ph="..." />
+                <marker date="1565183742425" expanded="true" signature="3587:4069" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/views/songPlay/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <marker date="1565184255046" expanded="true" signature="494:539" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -297,23 +247,23 @@
       <workItem from="1565146557839" duration="1418000" />
       <workItem from="1565161886035" duration="4367000" />
       <workItem from="1565166487497" duration="6583000" />
-      <workItem from="1565179340827" duration="5232000" />
+      <workItem from="1565179340827" duration="5397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111013000" />
+    <option name="totallyTimeSpent" value="111178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13072917" sideWeight="0.74850297" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30729166" sideWeight="0.7409551" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26754385" sideWeight="0.12604167" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26754385" sideWeight="0.87395835" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24232456" sideWeight="0.12604167" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24232456" sideWeight="0.87395835" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13072917" sideWeight="0.251497" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30729166" sideWeight="0.25904486" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44188598" sideWeight="0.90625" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -694,7 +644,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/songPlay/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="62">
           <caret line="11" column="74" lean-forward="false" selection-start-line="11" selection-start-column="74" selection-end-line="11" selection-end-column="74" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
