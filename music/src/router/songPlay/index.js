@@ -2,7 +2,7 @@ import SongPlay from '../../views/songPlay'
 export default [
     {
         to:"/songplay",
-        path:"/songplay/:id",
+        path:"/songplay/:id/:name",
         component:SongPlay,
         context:"",
         meta:{
