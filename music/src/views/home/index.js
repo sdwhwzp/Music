@@ -1,11 +1,15 @@
 import React from 'react'
 import axios from 'axios';
-import {NavLink} from "react-router-dom";
+import {
+	NavLink,
+	withRouter
+
+} from "react-router-dom";
 import Components from "../../components";
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
 
-export default class Home extends React.Component {
+ class Home extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={
@@ -20,6 +24,7 @@ export default class Home extends React.Component {
 	render(){
 		return(
 			<div >
+
 				<Components.Section></Components.Section>
 				<div className="swiper-container" style={{marginTop:"110px"}}>
 					<div className="swiper-wrapper">
@@ -27,13 +32,15 @@ export default class Home extends React.Component {
 							this.state.slider.map((v,i)=>{
 								return(
 									<div className="swiper-slide" key={v.id}>
-										<img width={"100%"} src={v.picUrl} alt=""/>
+										<img width={"100%"} src={v.picUrl} onClick={()=>{
+											this.props.history.push("/album")
+										}} alt=""/>
 									</div>
 								)
 							})
 						}
 					</div>
-					<div className='swiper-pagination'></div>
+					<div className='swiper-pagination' ></div>
 				</div>
 
 				<div className={'section-three'}>
@@ -42,7 +49,8 @@ export default class Home extends React.Component {
 							return(
 								<div key={item.cur_count}>
 									<h3>{item.cur_count}:{item.data.albumname}</h3>
-									<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}{
+									<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}
+									{
 										item.data.singer.map((item,index)=>{
 											return(
 												<div key={item.id} className={'sin'}>
@@ -51,11 +59,15 @@ export default class Home extends React.Component {
 											)
 										})
 									}
-										</span>
+									</span>
 								</div>
 							)
 						})
 					}
+					{/*<img src={require("../../assets/img/logo-nav.png")} height={'24px'} width={'82px'} alt=""/>*/}
+					{/*<p>@QQ音乐版权所有</p>*/}
+
+
 				</div>
 
 			</div>
@@ -64,7 +76,9 @@ export default class Home extends React.Component {
 
 	getListMore(pageIndex=1){
 		axios.get("/qq/v8/fcg-bin/fcg_v8_toplist_cp.fcg?pageNo="+pageIndex+"&topid=27")
+
 			.then(({data})=>{
+				console.log(data);
 				this.setState({
 					songlist:data.songlist
 				})
@@ -87,3 +101,4 @@ export default class Home extends React.Component {
 			})
 	}
 }
+export default withRouter(Home)

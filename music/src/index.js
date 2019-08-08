@@ -9,6 +9,9 @@ import './assets/css/songListDetail.css'
 import './assets/css/mvlist.css'
 import "./assets/css/search.css"
 import "./assets/css/recommend.css"
+import "./assets/css/albumDetail.css"
+import "./assets/css/album.css"
+
 import App from './App';
 import  {Provider} from 'react-redux'
 import store from './store'
