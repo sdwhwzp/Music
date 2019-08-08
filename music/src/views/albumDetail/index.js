@@ -16,17 +16,13 @@ class AlbumDetail extends React.Component{
         return (
             <div className={"albumDetail"}>
                     <p className={"iconfont icon-navbankicon"} onClick={()=>{this.props.history.go(-1)}}></p>
-                    <img className={"albumDetailHead"} height={'300px'} src={this.state.data.headPic} alt=""/>
+                    <img className={"albumDetailHead"} height={'300px'} src={this.state.headPic} alt=""/>
             </div>
         )
     }
     componentDidMount() {
         // console.log(11,this.props.location)
-        axios.get("/itool/banner",{
-            // params:{
-            //     slider:this.props.location.state.id
-            // }
-        })
+        axios.get("/itool/banner")
             .then(({data})=>{
                 // console.log(222222,data);
                 this.setState({
@@ -40,16 +36,23 @@ class AlbumDetail extends React.Component{
                 this.setState({
                     slider:data.data.slider
                 })
-                console.log(22,this)
+                // console.log(22,this)
             })
         axios.get("/itool/album?id=001W4mXo4Eywps")
             .then(({data})=>{
-                console.log(444444,data);
+                // console.log(444444,data);
                 this.setState({
-                    data:data.data.company
+                    data:data.data
                 })
                 console.log(666,this.state.data);
-                // console.log(7,this.state.data.company)
+                console.log(7,this.state.data.company)
+            })
+        axios.get("qq/v8/fcg-bin/fcg_v8_album_info_cp.fcg?albummid=001IskfD3Vncxo&format=json&inCharset=utf8&outCharset=utf-8&platform=yqq&needNewCode=0")
+            .then((data)=>{
+                console.log(77777777,data)
+                this.setState({
+                    data:data.data
+                })
             })
     }
 }

@@ -35,18 +35,17 @@ class Album extends React.Component{
                                         })
                                     }} alt=""/>
                                     <a className={"albumName"} href="" alt="">
-                                        {
-                                            this.state.albumlist.map((v,i)=>{
-                                                return(
-                                                    <div key={i}>
-                                                        <img src="" alt=""/>
-                                                        {v.album_name}
-                                                    </div>
-                                                )
-                                            })
-                                        }
+                                        {/*{*/}
+                                        {/*    this.state.albumlist.map((v,i)=>{*/}
+                                        {/*        return(*/}
+                                        {/*            <div key={i}>*/}
+                                        {/*                {v.album_name}*/}
+                                        {/*            </div>*/}
+                                        {/*        )*/}
+                                        {/*    })*/}
+                                        {/*}*/}
                                         {/*{this.state.data.company.name}*/}
-                                    {/*<p className={"albumTitle"}>{this.state.data.getAlbumDesc.Falbum_desc}</p>/\*/}
+                                    <p className={"albumTitle"}>{this.state.data.Falbum_desc}</p>/\
                                     </a>
                                 </div>
                             </div>

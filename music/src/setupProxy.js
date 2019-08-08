@@ -21,8 +21,8 @@ module.exports = function (app) {
 			"^/itool":""
 		}
 	}))
-}
 
 
 
 }
+
