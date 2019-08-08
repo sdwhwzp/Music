@@ -41,7 +41,13 @@
     border-radius: 7px;
     margin:4px;
 }
-.hotSearch p{
+.hotSearch:nth-child(1){
+    border:1px solid #f77;
+}
+.hotSearch:nth-child(1) .hotSearch_p{
+    color: #f77;
+}
+.hotSearch .hotSearch_p{
     font-size:12px;
     margin:4px;
 }

@@ -7,7 +7,8 @@ class SongList extends React.Component{
     constructor(){
         super()
         this.state={
-            songList:[]
+            songList:[],
+            sel:-1,
         }
     }
     componentDidMount(){
@@ -17,7 +18,8 @@ class SongList extends React.Component{
                 let list=[]
                 for (let index=0; index < data.data.list.length; index++) {
                     let {albumname,songname,songmid}=data.data.list[index].musicData
-                    list.push({albumname,songname,songmid})
+                    let vid=data.data.list[index].vid
+                    list.push({albumname,songname,songmid,vid})
                 }
              this.setState({
                  songList:list
@@ -27,35 +29,58 @@ class SongList extends React.Component{
         let img=this.refs.img
         let imgH=img.clientHeight
         let style = null
+
         this.scroll.on('scroll',({y})=>{
-            let shadow=this.refs.shadow
-            let distence = Math.max(y,-imgH+40)
-            if(y<=-imgH+40){
-                img.style.zIndex=1
-                img.style.height='60px'
-            }else {
-                img.style.zIndex=0
-                img.style.height=imgH+"px"
+            if(this.refs.shadow){
+                let shadow=this.refs.shadow
+                let distence = Math.max(y,-imgH+40)
+                if(y<=-imgH+40){
+                    img.style.zIndex=1
+                    img.style.height='60px'
+                }else {
+                    img.style.zIndex=0
+                    img.style.height=imgH+"px"
+                }
+                let precent = 1+(y/imgH)
+                if(y>=0){
+                    img.style.transform=`scale(${precent})`
+                }
+                shadow.style=`transform:translate3d(0,${distence}px,0)`
             }
-            let precent = 1+(y/imgH)
-            if(y>=0){
-                img.style.transform=`scale(${precent})`
-            }
-            shadow.style=`transform:translate3d(0,${distence}px,0)`
+        })
+
+        let name=localStorage.getItem("class")
+        this.setState({
+            sel:name
         })
 
     };
+    goBack(){
+        this.props.history.go(-1)
+    }
+    song(v,key){
+        localStorage.setItem("class",JSON.stringify(key))
+        let name=localStorage.getItem("class")
+        this.setState({
+            sel:name
+        })
+
+        this.props.history.push({
+            pathname: `/songplay/${v.songmid}`,
+
+        })
+    }
+    play(obj){
+        this.props.history.push(`/mvplayer/${obj.Fvid}`)
+    }
     render(){
-        // console.log(this.state.songList)
-        console.log(111111111)
+
         return(
             <div className={"song"}>
                 {
                     <div >
                         <div className={"header"}>
-                            <span className={"icon iconfont icon-navbankicon"} onClick={()=>{
-                            this.props.history.go(-1)
-                             }}></span>
+                            <span className={"icon iconfont icon-navbankicon"} onClick={this.goBack.bind(this)}></span>
                             <h4>{this.props.match.params.name}</h4>
                         </div>
                         <div className={"img"} ref={"img"} style={{backgroundImage:`url(${ Url(this.props.match.params.id)})`}}>
@@ -68,10 +93,11 @@ class SongList extends React.Component{
                                 {
                                     this.state.songList.map((v,i)=>{
                                         return(
-                                            <li key={i}>
-                                                <h1>{v.songname}</h1>
+
+                                            <li key={i} className={i==this.state.sel?'sel':""} >
+                                                <h1 ref={i} onClick={this.song.bind(this,v,i)}>{v.songname}</h1>
                                                 <p><span>{this.props.match.params.name}</span>  ·  <span>{v.albumname}</span></p>
-                                                <p className={"icon iconfont icon-bofang1"} id={"iconfont"}></p>
+                                                <p className={v.vid!==null&&v.vid.Fstatus!==null?"icon iconfont icon-bofang1":''} id={"iconfont"} onClick={this.play.bind(this,v.vid)}></p>
                                             </li>
                                         )
                                     })

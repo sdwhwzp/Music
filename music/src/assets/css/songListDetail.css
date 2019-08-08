@@ -15,8 +15,7 @@
 }
 .songListDetail .detail{
     height: 46px;
-    overflow: auto;
-    text-overflow: ellipsis;
+  
 }
 .songListDetail p img{
     width: 209px;
@@ -29,4 +28,8 @@
  .songListDetail a div{
 
      color:black;
+ }
+ .songListDetail input {
+     float: right;
+     color:red;
  }

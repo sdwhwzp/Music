@@ -22,10 +22,10 @@ class Section extends React.Component{
                                 this.props.history.push('/rankingList')
                             }}>排行榜</span>
                         </NavLink>
-                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}} to={"/recommend"}>
+                        <NavLink  style={{color:"gray"}} activeStyle={{color:"#31c27c"}} to={"/mvlist"}>
                             <span className={'two'}  onClick={()=>{
-                                this.props.history.push('/recommend')
-                            }}>歌单</span>
+                                this.props.history.push('/mvlist')
+                            }}>MV</span>
                         </NavLink>
                         <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}} to={"/album"}>
                             <span className={'two'} onClick={()=>{

@@ -12,15 +12,15 @@ class SingListDetail extends React.Component {
 			visitnum:"",
 			songnum:"",
 			songList:[],
-			logo:''
-
+			logo:'',
+			id:''
 		}
 	}
 	componentWillMount() {
 		let _me =this;
 		// console.log(this.props.match.params.dissid);
 		this.props.getSingListDetail(this.props.match.params.dissid,function (state) {
-				console.log(state.singList[0])
+				console.log(state.singList[0],555)
 			var reg = new RegExp("&#8226;");
 			_me.setState({
 				singListTitle:state.singList[0].dissname.replace(reg,""),
@@ -30,6 +30,7 @@ class SingListDetail extends React.Component {
 				songnum:state.singList[0].songnum,
 				songList:state.singList[0].songlist,
 				logo:state.singList[0].logo,
+				id:state.singList[0].songlist.vid
 			})
 		})
 	}
@@ -55,7 +56,8 @@ class SingListDetail extends React.Component {
 					</div>
 					{this.state.songList.map((v,i)=>{
 						return(
-							<li key={i}><a href="javascript:;"><div>{v.songname}</div>{v.singer[0].name}</a></li>
+							<li key={i}><a href="javascript:;"><div>{v.songname}</div>{v.singer[0].name}{v.vid!==""?
+								<input type="button" value={"mv"} onClick={this.mvPlayer.bind(this,v.vid)}/>:null}</a></li>
 						)
 					})
 					}
@@ -63,6 +65,9 @@ class SingListDetail extends React.Component {
 
 			</div>
 		)
+	}
+	mvPlayer(id){
+		this.props.history.push('/mvplayer/'+id)
 	}
 }
 export default withRouter(SingListDetail)

@@ -34,10 +34,8 @@ class Album extends React.Component{
                                             }
                                         })
                                     }} alt=""/>
-                                    <a className={"albumName"} href="" alt=""
-                                       // onClick={()=>{
-                                       //  this.props.history.push("/albumDetail")}}
-                                    >{
+                                    <a className={"albumName"} href="" alt="">
+                                        {
                                             this.state.albumlist.map((v,i)=>{
                                                 return(
                                                     <div key={i}>
@@ -48,7 +46,6 @@ class Album extends React.Component{
                                             })
                                         }
                                         {/*{this.state.data.company.name}*/}
-
                                     {/*<p className={"albumTitle"}>{this.state.data.getAlbumDesc.Falbum_desc}</p>/\*/}
                                     </a>
                                 </div>
@@ -75,7 +72,7 @@ class Album extends React.Component{
                     slider:data.data.slider
                 })
             })
-        axios.get("https://v1.itooi.cn/tencent/album?id=001W4mXo4Eywps")
+        axios.get("/itool/album?id=001W4mXo4Eywps")
             .then(({data})=>{
                 // console.log(1,data);
                 this.setState({

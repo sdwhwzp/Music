@@ -12,6 +12,10 @@ import singListDetail from './singListDetail'
 import player from './player'
 import album from './album'
 import albumDetail from './albumDetail'
+import songPlay from "./songPlay"
+
+import mvlist from './mvlist'
+import mv from './mvPlayer'
 export default [
     ...home,
     ...recommend,
@@ -26,8 +30,10 @@ export default [
     ...singListDetail,
     ...player,
     ...album,
-    ...albumDetail
-
+    ...albumDetail,
+    ...songPlay,
+    ...mvlist,
+    ...mv
 
 
 ]

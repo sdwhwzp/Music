@@ -21,11 +21,11 @@ class AlbumDetail extends React.Component{
         )
     }
     componentDidMount() {
-        console.log(11,this.props.location)
-        axios.get("https://v1.itooi.cn/tencent/banner",{
-            params:{
-                slider:this.props.location.state.id
-            }
+        // console.log(11,this.props.location)
+        axios.get("/itool/banner",{
+            // params:{
+            //     slider:this.props.location.state.id
+            // }
         })
             .then(({data})=>{
                 // console.log(222222,data);
@@ -42,7 +42,7 @@ class AlbumDetail extends React.Component{
                 })
                 console.log(22,this)
             })
-        axios.get("https://v1.itooi.cn/tencent/album?id=001W4mXo4Eywps")
+        axios.get("/itool/album?id=001W4mXo4Eywps")
             .then(({data})=>{
                 console.log(444444,data);
                 this.setState({

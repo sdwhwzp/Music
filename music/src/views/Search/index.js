@@ -15,7 +15,9 @@ class Search extends React.Component {
     render() {
         return (
             <div id={"search_main"}>
-                <p className={"cancel"} onClick={()=>{this.props.history.go(-1)}}>取消</p>
+                <p className={"cancel"} onClick={() => {
+                    this.props.history.go(-1)
+                }}>取消</p>
                 <div className={"search"}>
                     <input className={"search_input"} type="search" ref={"search"} placeholder={"搜索歌曲、歌单、专辑"}
                            onKeyPress={this.search.bind(this)}/>
@@ -32,14 +34,14 @@ class Search extends React.Component {
                         })
                     }
                 </div>
-                <div>
+                <div ref={"hot"}>
                     <h5>热门搜索</h5>
                     <div>
                         {
                             this.state.hotSearchList.map((v, i) => {
                                 return (
                                     <div key={i} className={"hotSearch"}>
-                                        <p ref={"hotSearch"}>{v.k}</p>
+                                        <span ref={"hotSearch"} className={"hotSearch_p"}>{v.k}</span>
                                     </div>
                                 )
                             })
@@ -77,4 +79,5 @@ class Search extends React.Component {
         })
     }
 }
+
 export default withRouter(Search);
