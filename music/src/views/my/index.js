@@ -1,18 +1,22 @@
 import React from 'react'
-import {NavLink,withRouter} from 'react-router-dom'
-
+import {NavLink,withRouter,BrowserRouter as Router, Route} from 'react-router-dom'
+import Mylist from './mylist'
+import Songlist from './songlist'
+import axios from 'axios'
  class My extends React.Component {
 	constructor(){
 		super()
 		this.state={
 			singList:[],
-			singListtwo:[]
+			singListtwo:[],
+			isShow:false
 		}
 
 	}
 	componentWillMount() {
+
 		let _me =this
-		if (!this.props.state.login.log) {
+		this.props.getMyList()
 			this.props.getSingList(function (state) {
 				_me.setState({
 					singList:state.singList
@@ -25,7 +29,11 @@ import {NavLink,withRouter} from 'react-router-dom'
 					singListtwo:state.singList
 				})
 			})
-		}
+		axios.get('music/mysing',{params:{
+			userName:localStorage.userName
+			}}).then(({data})=>{
+				console.log(data)
+		})
 	}
 	detail(dissid){
 		this.props.history.push('/singlistdetail/'+dissid)
@@ -36,8 +44,8 @@ import {NavLink,withRouter} from 'react-router-dom'
 		this.props.log()
 		this.forceUpdate();
 	}
-	render(){
 
+	render(){
 		if(!this.props.state.login.log) {
 			return (
 				<div className={"my"}>
@@ -67,9 +75,18 @@ import {NavLink,withRouter} from 'react-router-dom'
 				</div>
 			)
 		}else {
+
 			return(
-				<div>
-					<p>我的</p>
+				<div className={"my"}>
+					<p>{localStorage.userName}</p>
+					<Router forceRefresh={true}>
+						<span ><NavLink to={'/my'}>自建歌单 </NavLink><NavLink to={'/my/collection'}>收藏歌单</NavLink><i className={'icon iconfont icon-jiahao'} onClick={()=>{this.setState({isShow:true})}}></i> </span>
+
+						<Route exact={true} path={'/my'}  render={()=><Mylist {...this.props}/> }></Route>
+						<Route path={'/my/collection'}   render={()=><Songlist {...this.props}/>}></Route>
+					</Router>
+
+
 
 					<p>推荐歌单</p>
 					<ul>
@@ -82,17 +99,7 @@ import {NavLink,withRouter} from 'react-router-dom'
 							})
 						}
 					</ul>
-					<p>最新歌单</p>
-					<ul>
 
-						{
-							this.state.singListtwo.map((v,i)=>{
-								return(
-									<li key={i}><a href="javascript:;"  data-dissid={v.dissid} onClick={this.detail.bind(this,v.dissid)}><img src={v.imgurl} alt=""/>{v.dissname}</a></li>
-								)
-							})
-						}
-					</ul>
 					<input type="button" value={"退出"} onClick={this.isExit.bind(this)}/>
 
 				</div>

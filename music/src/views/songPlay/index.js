@@ -8,6 +8,8 @@ class SongPlay extends React.Component{
             id:this.props.match.params.id
         }
     }
+
+
     componentDidMount(){
         axios.get(`/itool/url?id=${this.state.id}&quality=128&isRedirect=0`)
             .then((data) => {

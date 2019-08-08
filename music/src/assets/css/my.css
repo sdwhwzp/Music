@@ -58,3 +58,42 @@ footer .nav i{
     width: 100%;
     overflow: auto;
 }
+.my span a{
+    display: inline;
+}
+.my span i{
+   float: right;
+}
+.my .post {
+     position: fixed;
+     background: white;
+     width: 100%;
+     height: 100%;
+ }
+.my .post p{
+    text-align: center;
+
+}
+.my .post p span{
+
+    margin: 0 32%;
+}
+.my .post a {
+    color: #000;
+    display: inline;
+
+}
+.my .post input {
+    border: none;
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #eaeaea;
+}
+.myList a {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    color: #000;
+}
+.collections{
+
+}

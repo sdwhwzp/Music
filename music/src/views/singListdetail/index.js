@@ -13,7 +13,8 @@ class SingListDetail extends React.Component {
 			songnum:"",
 			songList:[],
 			logo:'',
-			id:''
+			id:'',
+			color:"black"
 		}
 	}
 	componentWillMount() {
@@ -33,16 +34,56 @@ class SingListDetail extends React.Component {
 				id:state.singList[0].songlist.vid
 			})
 		})
+
 	}
 	goback(){
 		this.props.history.go(-1)
+	}
+	collections(){
+
+		if (this.state.color === "black") {
+
+			axios.get('/music/collections',{
+				params:{
+					disstid:this.props.state.singList[0].disstid,
+					dissname:this.props.state.singList[0].dissname,
+					total:this.props.state.singList[0].total_song_num,
+					nick:this.props.state.singList[0].nick,
+					token:localStorage.token,
+					headurl:this.props.state.singList[0].logo
+
+				}
+			}).then(({data})=>{
+				alert(data.msg)
+				this.setState({
+					color:data.color
+				})
+			})
+		}else{
+			axios.delete('/music/collections',{
+				params:{
+					disstid:this.props.state.singList[0].disstid,
+					token:localStorage.token
+				}
+			}).then(({data})=>{
+				if (data.ok === -1){
+					alert(data.msg)
+				} else {
+					this.setState({
+						color:data.color
+					})
+				}
+
+			})
+		}
+
 	}
 	render(){
 		console.log(this.state.songList,111)
 		return(
 
 			<div className={"songListDetail"}>
-				<a href="javascript:;" onClick={this.goback.bind(this)}>&lt;</a>
+				<a href="javascript:;"  onClick={this.goback.bind(this)}>&lt;</a>
 
 				<p><img src={this.state.logo} alt=""/></p>
 				<p>{this.state.singListTitle}</p>
@@ -50,6 +91,7 @@ class SingListDetail extends React.Component {
 				<p>播放量:{this.state.visitnum}</p>
 				<p className={"detail"} dangerouslySetInnerHTML={{__html:this.state.introduce} }></p>
 				<p>歌单总共{this.state.songnum}首</p>
+				<i className={'icon iconfont icon-aixin'} style={{color:this.state.color}} onClick={this.collections.bind(this)}></i>
 				<ul>
 					<div>
 						歌曲
@@ -57,7 +99,7 @@ class SingListDetail extends React.Component {
 					{this.state.songList.map((v,i)=>{
 						return(
 							<li key={i}><a href="javascript:;"><div>{v.songname}</div>{v.singer[0].name}{v.vid!==""?
-								<input type="button" value={"mv"} onClick={this.mvPlayer.bind(this,v.vid)}/>:null}</a></li>
+								<i className={"icon iconfont icon-bofang1"}  onClick={this.mvPlayer.bind(this,v.vid)}></i>:null}</a></li>
 						)
 					})
 					}
@@ -66,6 +108,20 @@ class SingListDetail extends React.Component {
 			</div>
 		)
 	}
+	componentDidMount() {
+
+		axios.get('/music/color',{
+			params:{
+				disstid:this.props.match.params.dissid,
+				userName:localStorage.userName
+			}
+		}).then(({data})=>{
+			this.setState({
+				color:data.color
+			})
+		})
+	}
+
 	mvPlayer(id){
 		this.props.history.push('/mvplayer/'+id)
 	}

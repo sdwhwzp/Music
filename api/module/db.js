@@ -70,6 +70,7 @@ module.exports.count = function (coll,whereObj,cb) {
 * id:删除的文档ID
 * cb:回调*/
 module.exports.deleteOneById = function (coll,id,cb) {
+
     _connect(function (db) {
         db.collection(coll).deleteOne({
             _id:mongodb.ObjectId(id)// 将字符串转换为mongodb ObjectId类型
