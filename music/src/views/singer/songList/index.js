@@ -3,6 +3,7 @@ import Url from '../../../common/img'
 import axios from 'axios'
 import {withRouter} from 'react-router-dom'
 import BS from 'better-scroll'
+import getVid from '../../../common/getVid'
 class SongList extends React.Component{
     constructor(){
         super()
@@ -23,6 +24,9 @@ class SongList extends React.Component{
                 }
              this.setState({
                  songList:list
+             },()=>{
+                 let arr=getVid(this.state.songList)
+                 localStorage.setItem("getVid",JSON.stringify(arr))
              })
             })
         this.scroll = new BS(".list-wrapper",{click:true,probeType:3})
@@ -34,7 +38,7 @@ class SongList extends React.Component{
             if(this.refs.shadow){
                 let shadow=this.refs.shadow
                 let distence = Math.max(y,-imgH+40)
-                if(y<=-imgH+40){
+                if(y<=-imgH+60){
                     img.style.zIndex=1
                     img.style.height='60px'
                 }else {
@@ -54,6 +58,7 @@ class SongList extends React.Component{
             sel:name
         })
 
+
     };
     goBack(){
         this.props.history.go(-1)
@@ -66,7 +71,7 @@ class SongList extends React.Component{
         })
 
         this.props.history.push({
-            pathname: `/songplay/${v.songmid}`,
+            pathname: `/songplay/${v.songmid}/${this.props.match.params.name}`,
 
         })
     }
