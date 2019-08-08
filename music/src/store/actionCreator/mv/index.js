@@ -15,10 +15,10 @@ export const getMvPlayer =function (playload) {
 	}
 }
 export const getMvDetail =function (playload) {
-	return {
-		type:actionType.GET_MV_DEATIL,
-		playload
-	}
+    return {
+        type:actionType.GET_MV_DEATIL,
+        playload
+    }
 }
 export const getMvDiscuss =function (playload) {
 	return {

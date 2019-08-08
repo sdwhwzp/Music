@@ -11,7 +11,6 @@ class Recommend extends React.Component {
 		}
 	}
 	componentWillMount() {
-		console.log(this.props.match.params);
 		axios.get("/music/singList",{
 			params:{
 				disstid:3602407677
