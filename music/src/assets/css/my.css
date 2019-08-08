@@ -39,12 +39,9 @@ footer .nav i{
     background: greenyellow;
     width: 20%;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 8px;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 .my img{
     width: 200px;
 }
@@ -54,13 +51,11 @@ footer .nav i{
 .my a{
     display: block;
     font-size: 14px;
+    color:#333333;
 }
 .my ul{
     display:flex ;
     width: 100%;
     overflow: auto;
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224

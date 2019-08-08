@@ -7,8 +7,6 @@ module.exports = function (app) {
 			"^/music":""
 		}
 	}))
-
-
     app.use("/qq", proxy({
         target: "https://c.y.qq.com",
         changeOrigin: true,
@@ -23,6 +21,4 @@ module.exports = function (app) {
 			"^/music":""
 		}
 	}))
-
-
 }

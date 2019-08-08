@@ -74,16 +74,14 @@ header{
   top: 0;
   background: #fff;
   height: 70px;
-
 }
 .top{
   display: block;
   width: 100%;
   position: fixed;
-  top: 0px;
+  top: 25px;
   height: 70px;
   padding: 0 30px;
-
   z-index: 999;
 }
 .box{
@@ -91,6 +89,8 @@ header{
   text-align: center;
   line-height:16px;
   font-size: 16px;
+  border:1px solid #cccccc;
+  -moz-box-shadow: #cccccc;
 }
 .section{
   width: 100%;
@@ -115,15 +115,11 @@ header{
 .two{
   -webkit-box-flex: 1;
   text-decoration: none;
-  padding:0 60px;
+  padding:0 30px;
 }
 .swiper .section-two{
   position: relative;
   height: 175px;
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 }
 .section-two img{
   overflow: hidden;
@@ -138,6 +134,10 @@ header{
 .section-three .three{
   padding: 3px;
 }
+/*.section-three img{*/
+/*  display: block;*/
+/*  margin: 0 auto 30px;*/
+/*}*/
 .section-three .three .sin{
   padding: 5px;
 }
@@ -147,40 +147,14 @@ header{
   margin-top: 70px;
 }
 .swiper-container img{
-<<<<<<< HEAD
-
   width: 100%;
-
-  background: #404040;
-
-
-
   height: 175px;
-  background: #404040;
-
-
-
-=======
-  width: 100%;
-  background: #404040;
-  height: 175px;
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 }
 .section-four{
   position: relative;
   top: 40px;
   height: 100%;
-
 }
-
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
-/*  background: white;*/
-/*  z-index: 2;*/
-/*}*/
 .leftnav{
   position: fixed;
   right: 10px;
@@ -202,10 +176,6 @@ header{
 .context{
   margin-bottom: 50px;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
 .song{
   width:100%;
 }
@@ -216,11 +186,11 @@ header{
   color: white;
 }
 /*.song .iconfont{*/
-<<<<<<< HEAD
+
 /*font-size: 25px;*/
-=======
+
   /*font-size: 25px;*/
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
+
 /*}*/
 .song .header h4{
   font-size: 28px;
@@ -234,9 +204,6 @@ header{
   top:350px;
   bottom: 0px;
   width: 100%;
-<<<<<<< HEAD
-=======
-
 }
 .song .list-wrapper ul{
   padding-left: 25px;
@@ -303,10 +270,6 @@ header{
 
   height: 300px;
   width: 100%;
-}
-
->>>>>>> 8f3f7f0c515f5b7bcc45360d28e25a30e73b8224
-
 }
 .song .list-wrapper ul{
   padding-left: 25px;
