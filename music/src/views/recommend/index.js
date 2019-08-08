@@ -11,7 +11,6 @@ class Recommend extends React.Component {
 		}
 	}
 	componentWillMount() {
-		console.log(this.props.match.params);
 		axios.get("/music/singList",{
 			params:{
 				disstid:3602407677
@@ -35,8 +34,10 @@ class Recommend extends React.Component {
 					this.state.songSheetList.map((v,i)=>{
 						return(
 							<div key={i} className={"songSheetList_l"} >
-								<a href={'javascript:;'} onClick={this.detail.bind(this,v.dissid)}><img src={v.imgurl} alt=""/></a>
-								<p>{v.dissname}</p>
+								<a href={'javascript:;'} onClick={this.detail.bind(this,v.dissid)}>
+									<img src={v.imgurl} alt=""/>
+									<p>{v.dissname}</p>
+								</a>
 							</div>
 						)
 					})

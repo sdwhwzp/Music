@@ -27,7 +27,7 @@ class RankingListDetail extends React.Component{
                 <div className={"rankingListDetailList"}>
                     {
                         this.state.songList.map((v,i)=>{
-                            console.log(v)
+                            // console.log(v)
                             return(
                                 <div key={i} className={"songList-list"}>
                                     <p className={"songname"}><span>{v.cur_count}</span>{v.data.albumname}</p>
@@ -73,8 +73,8 @@ class RankingListDetail extends React.Component{
                     songList:data.songlist,
                     topInfo:data.topinfo
                 });
-                console.log(this.state.songList);
-                console.log(this.state.topInfo);
+                // console.log(this.state.songList);
+                // console.log(this.state.topInfo);
             })
     }
 }
