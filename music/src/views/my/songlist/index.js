@@ -38,7 +38,10 @@ class Songlist extends React.Component{
 				{
 					this.state.msg==="暂无收藏歌单"?this.state.msg:this.state.songList.map((v,i)=>{
 						return (
-						<a key={i} href="javascript:;" onClick={this.detail.bind(this,v.disstid)}><img src={v.headurl} alt=""/><p>{v.dissname}</p>{v.nick}</a>
+						<a className={"collection_a"} key={i} href="javascript:;" onClick={this.detail.bind(this,v.disstid)}>
+							<img src={v.headurl} alt=""/>
+							<p>{v.dissname}</p>{v.nick}
+						</a>
 						)
 					})
 				}

@@ -74,28 +74,30 @@ import axios from 'axios'
 
 			return(
 				<div className={"my"}>
-					<p>{localStorage.userName}</p>
+					<p className={"localUser"}><span>{localStorage.userName}</span></p>
 					<Router forceRefresh={true}>
-						<span ><NavLink to={'/my'}>收藏歌曲 </NavLink><NavLink to={'/my/collection'}>收藏歌单</NavLink><i className={'icon iconfont icon-jiahao'} onClick={()=>{this.setState({isShow:true})}}></i> </span>
+						<span className={"my_link"}>
+							<NavLink to={'/my'} className={"collection_my"}>收藏歌曲 </NavLink>
+							<NavLink to={'/my/collection'} className={"collection_my"}>收藏歌单</NavLink>
+							<i className={'icon iconfont icon-jiahao'} onClick={()=>{this.setState({isShow:true})}}></i>
+						</span>
 
-						<Route exact={true} path={'/my'}  render={()=><Mylist {...this.props} /> }></Route>
+						<Route exact={true} path={'/my'}  render={()=><Mylist {...this.props} />}></Route>
 						<Route path={'/my/collection'}   render={()=><Songlist {...this.props}/>}></Route>
 					</Router>
+					<div className={"recommendList"}>
+						<h3>推荐歌单</h3>
+						<ul>
 
-
-
-					<p>推荐歌单</p>
-					<ul>
-
-						{
-							this.state.singList.map((v,i)=>{
-								return(
-									<li key={i}><a href="javascript:;"  data-dissid={v.dissid} onClick={this.detail.bind(this,v.dissid)}><img src={v.imgurl} alt=""/>{v.dissname}</a></li>
-								)
-							})
-						}
-					</ul>
-
+							{
+								this.state.singList.map((v,i)=>{
+									return(
+										<li key={i}><a href="javascript:;"  data-dissid={v.dissid} onClick={this.detail.bind(this,v.dissid)}><img src={v.imgurl} alt=""/>{v.dissname}</a></li>
+									)
+								})
+							}
+						</ul>
+					</div>
 					<input type="button" value={"退出"} onClick={this.isExit.bind(this)}/>
 
 				</div>

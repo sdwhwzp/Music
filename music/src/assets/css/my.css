@@ -90,11 +90,45 @@ footer .nav i{
     height: 30px;
     border-bottom: 1px solid #eaeaea;
 }
+
+.myList{
+    text-align: center;
+}
 .myList a {
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
+    width: 50%;
     color: #000;
+    float: left;
 }
 .collections{
+    width: 100%;
+}
+.collections .collection_a{
+   width: 48%;
+    float: left;
+    margin-left: 5px;
+}
+.my .localUser{
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    margin: 5px;
+    height: 40px;
+}
+.my .localUser>span{
+    line-height: 30px;
+    font-size: 24px;
+}
+.my .my_link{
+    margin:5px;
+}
+.my .my_link .collection_my{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
 
+.recommendList{
+    width: 100%;
+}
+.recommendList>h3{
+    width: 100%;
 }
