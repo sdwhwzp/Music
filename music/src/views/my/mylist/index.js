@@ -32,7 +32,7 @@ class Mylist extends React.Component{
 				{this.state.data.msg===undefined? <p >{
 					this.state.info.map((v,i)=>{
 						return (
-							<a key={i} href='javascript:;' onClick={()=>this.props.history.push('/songplay/'+v.id)}>{v.name}</a>
+							<a key={i} href='javascript:;' onClick={()=>this.props.history.push('/songplay/'+v.id+"/"+v.singerName)}>{v.name}</a>
 						)
 					})
 				}</p>:this.state.data.msg}
