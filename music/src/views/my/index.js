@@ -76,7 +76,7 @@ import axios from 'axios'
 				<div className={"my"}>
 					<p>{localStorage.userName}</p>
 					<Router forceRefresh={true}>
-						<span ><NavLink to={'/my'}>自建歌单 </NavLink><NavLink to={'/my/collection'}>收藏歌单</NavLink><i className={'icon iconfont icon-jiahao'} onClick={()=>{this.setState({isShow:true})}}></i> </span>
+						<span ><NavLink to={'/my'}>收藏歌曲 </NavLink><NavLink to={'/my/collection'}>收藏歌单</NavLink><i className={'icon iconfont icon-jiahao'} onClick={()=>{this.setState({isShow:true})}}></i> </span>
 
 						<Route exact={true} path={'/my'}  render={()=><Mylist {...this.props} /> }></Route>
 						<Route path={'/my/collection'}   render={()=><Songlist {...this.props}/>}></Route>

@@ -61,7 +61,6 @@
 #Logon div:nth-last-child(1) {
     margin-top:50px ;
     margin-bottom:28% ;
-
     font-size: 20px;
 }
 #Logon div:nth-last-child(1) a{
@@ -78,7 +77,8 @@
     height: 30px;
 }
 #Logon p .button{
-    display: block;
+    margin-left: 35%;
+       display: block;
     width:180px;
     height: 30px;
 }

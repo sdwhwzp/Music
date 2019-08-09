@@ -17,6 +17,7 @@ class RankingListDetail extends React.Component{
         this.props.history.push('/mvplayer/'+id)
     }
     render(){
+        console.log(this.state.songList)
         return(
             <div id={"rankingListDetail"}>
                 <p className={"iconfont icon-navbankicon"} onClick={()=>{this.props.history.go(-1)}}></p>
@@ -29,8 +30,8 @@ class RankingListDetail extends React.Component{
                         this.state.songList.map((v,i)=>{
                             // console.log(v)
                             return(
-                                <div key={i} className={"songList-list"}>
-                                    <p className={"songname"}><span>{v.cur_count}</span>{v.data.albumname}</p>
+                                <div key={i} className={"songList-list"} >
+                                    <p className={"songname"} onClick={()=>this.props.history.push('/songplay/'+v.data.songmid+"/"+v.data.singer[0].name)}><span>{v.cur_count}</span>{v.data.albumname}</p>
                                     {v.data.vid!==""?<i className={"icon iconfont icon-bofang1"}  onClick={this.mvPlayer.bind(this,v.data.vid)}></i>:null}
                                     <p className={"singerall"}>
                                         <b>{v.data.interval}%</b>
