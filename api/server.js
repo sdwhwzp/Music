@@ -85,7 +85,8 @@ app.post("/login",function (req, res) {
                     token,
                     code,
                     ok:1,
-                    msg:"登录成功"
+                    msg:"登录成功",
+                    userName:adminName
                 })
             })
         }else {
@@ -110,7 +111,8 @@ app.post("/login",function (req, res) {
                            token,
                             code,
                            ok:1,
-                           msg:"登录成功"
+                           msg:"登录成功",
+                           userName:adminName
                        })
                    })
                }else {
@@ -338,7 +340,10 @@ app.get('/userName',function (req, res) {
 app.get("/detail",function (req, res) {
         const disstid=req.query.disstid
     sing.detail(disstid,function (data) {
-        res.json(data)
+        if (data.code === 0) {
+            res.json(data)
+        }
+
     })
 })
 app.get('/singList',function (req, res) {
@@ -374,6 +379,268 @@ app.delete('/delete',function (req, res) {
 
    })
 
+})
+app.get('/mylist',function (req, res) {
+    const userName=req.query.userName
+    const whereObj={}
+
+    db.find(userName+"mylist",{
+        whereObj,
+        sortObj:{
+                time:-1
+        }
+    },function (err,info) {
+
+        let a=info.map((v)=>{
+            return v.listName
+        })
+
+        if (info.map((v)=>{
+            return v.listName
+        })=== undefined) {
+            res.json({
+                ok:1,
+                msg:"请创建歌单"
+            })
+        }else{
+
+                res.json({
+                    ok:1,
+                    msg:"成功",
+                    listName: info.map((v)=>{
+                        return v.listName
+                    })
+                })
+
+        }
+
+    })
+
+})
+app.post('/mylist',function (req, res) {
+
+    const {token,name,userName}=req.body
+    const info = jwt.decode(token).info
+    if (jwt.decode(token).ok===-1) {
+         res.json({
+                ok:-1,
+                msg:"登录信息过期，请重新登录"
+            })
+        }else {
+            if (userName===info.adminName) {
+                db.insertOne(userName+"mylist",{
+                    listName:name,
+                    time:Date.now()
+                },function (err) {
+                    res.json({
+                        ok:1,
+                        msg:"创建成功",
+                    })
+                })
+            }
+        }
+
+})
+app.get('/collections',function (req, res) {
+
+    const {disstid,dissname,total,nick,token,headurl}=req.query
+
+    if (token === undefined) {
+        res.json({
+            ok:-1,
+            msg:"请登录",
+            color:"black"
+        })
+    }else {
+        if (jwt.decode(token).ok === -1) {
+            res.json({
+                ok: -1,
+                msg: "登录信息过期，请重新登录"
+            })
+        } else {
+            const userName = jwt.decode(token).info.adminName
+            db.insertOne(userName + 'collections', {
+                disstid,
+                dissname,
+                total,
+                nick,
+                time: Date.now(),
+                color: "red",
+                headurl
+            }, function (err) {
+                res.json({
+                    ok: 1,
+                    msg: '收藏成功',
+                    color: "red"
+                })
+            })
+        }
+    }
+
+})
+app.delete('/collections',function (req, res) {
+    const disstid =req.query.disstid
+    const token =req.query.token
+    if (jwt.decode(token).ok===-1) {
+        res.json({
+            ok:-1,
+            msg:"登录信息过期，请重新登录",
+            color:"red"
+        })
+    }else {
+        const userName = jwt.decode(token).info.adminName
+        db.findOne(userName+'collections',{disstid},function (err,info){
+           db.deleteOneById(userName+'collections',info._id,function (err) {
+                res.json({
+                    ok:1,
+                    msg:"取消收藏成功",
+                    color:"black"
+                })
+            })
+
+        })
+
+    }
+
+})
+app.get('/color',function (req, res) {
+    const disstid = req.query.disstid
+    const userName = req.query.userName
+    db.findOne(userName+"collections",{disstid},function (err, info) {
+
+        if (info === null) {
+            res.json({
+                ok:1,
+                msg:"成功",
+                color:"black"
+            })
+        }else {
+
+            res.json({
+                ok:1,
+                msg:"成功",
+                color:"red"
+            })
+        }
+    })
+})
+app.get('/collectionsList',function (req, res) {
+    const userName =req.query.userName
+    db.find(userName+"collections",{
+        whereObj: {
+        }
+    },function (err, info) {
+
+        if (info["0"] === undefined) {
+            res.json({
+                ok:-1,
+                msg:'暂无收藏歌单'
+            })
+        }else {
+            res.json({
+                ok:1,
+                msg:"成功",
+                info
+            })
+        }
+
+    })
+})
+app.get('/sing',function (req, res) {
+
+    const {name,id,subtitle,token}=req.query
+    if (jwt.decode(token).ok === -1) {
+        res.json({
+            ok:-1,
+            msg:"请登录",
+            color:"white"
+        })
+    }else {
+        const userName = jwt.decode(token).info.adminName
+        db.insertOne(userName+'sing',{
+            name,
+            id,
+            subtitle,
+            addTime:Date.now()
+        },function (err) {
+            res.json({
+                ok:1,
+                msg:"收藏成功",
+                color:"red"
+            })
+        })
+    }
+
+})
+app.delete('/sing',function (req, res) {
+    const {id,token} =req.query
+    if (jwt.decode(token).ok === -1) {
+        res.json({
+            ok: -1,
+            msg: "请登录",
+            color: "red"
+        })
+    }else {
+        const userName = jwt.decode(token).info.adminName
+        db.findOne(userName+"sing",{
+            id
+        },function (err, info) {
+
+
+            db.deleteOneById(userName+"sing",info._id,function (err) {
+                res.json({
+                    ok:1,
+                    msg:"取消收藏",
+                    color:"white"
+                })
+            })
+
+        })
+    }
+})
+app.get('/colorsing',function (req, res) {
+    const {userName,id}=req.query
+    db.findOne(userName+"sing",{
+        id
+    },function (err, info) {
+
+        if (info === null) {
+            res.json({
+                ok:-1,
+                color:"white"
+            })
+        }else {
+            res.json({
+                ok:1,
+                color:"red"
+            })
+        }
+
+    })
+})
+app.get('/Mysing',function (req, res) {
+    const userName = req.query.userName
+
+    db.find(userName+'sing',{
+        sortObj: {
+            addTime: -1
+        },
+
+    },function (err, info) {
+
+        if (info["0"] === undefined) {
+            res.json({
+                ok:-1,
+                msg:"暂未收藏歌曲"
+            })
+        }else {
+            res.json({
+                ok:1,
+                info
+            })
+        }
+
+    })
 })
 app.listen(80,function () {
     console.log("success")

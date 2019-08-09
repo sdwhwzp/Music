@@ -30,7 +30,7 @@ module.exports={
         }
         catch{
             return ({
-                ok:1,
+                ok:-1,
                 msg:"解析失败"
             })
         }

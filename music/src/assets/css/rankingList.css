@@ -94,3 +94,7 @@
 #rankingListDetail .rankingListDetailList .songList-list:nth-child(3) .singerall b{
     color:#f00;
 }
+.songList-list i{
+    float: right;
+    font-size: 25px;
+}

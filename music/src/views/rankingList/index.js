@@ -52,6 +52,7 @@ class RankingList extends React.Component{
         // console.log(22222,this);
         axios.get("/qq/v8/fcg-bin/fcg_myqq_toplist.fcg?g_tk=5381&uin=0&format=json")
             .then(({data})=>{
+                console.log(5,data);
                 // console.log(data);
                 this.setState({
                     topList:data.data.topList

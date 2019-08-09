@@ -28,10 +28,14 @@
 .mv div {
     text-align: center;
 }
-.mv div a{
+.mv a{
     color:black;
-    margin-left: 20px;
     font-size: 20px;
+}
+.mv div a{
+
+    margin-left: 20px;
+
 }
 
 .mv .discuss p{

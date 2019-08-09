@@ -26,6 +26,7 @@ class Recommend extends React.Component {
 	}
 	detail(dissid){
 		this.props.history.push('/singlistdetail/'+dissid)
+		this.forceUpdate(true)
 	}
 	render(){
 		return(

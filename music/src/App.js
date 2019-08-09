@@ -11,7 +11,7 @@ import {connect} from 'react-redux'
 import login from './store/actionCreator/login'
 import singList from './store/actionCreator/singlist'
 import mv from './store/actionCreator/mv'
-import axios from 'axios'
+import collections from './store/actionCreator/collections'
 class App extends React.Component {
 	componentWillMount() {
 		this.props.log()
@@ -82,7 +82,13 @@ function mapSateToProps(state) {
 			mv.getMvDiscuss(dispatch,id,pageSize,function (state) {
 				cb(state)
 			})
+		},
+		getMyList(){
+
+			collections.getMyList(dispatch)
+
+			}
 		}
-	}
+
 }
 export default connect(mapSateToProps, mapDispatchProps)(App)

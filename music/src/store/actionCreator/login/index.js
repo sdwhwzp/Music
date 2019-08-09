@@ -25,7 +25,9 @@ export default {
 		}).then(({data})=>{
 			if (data.ok === 1) {
 				alert(data.msg)
+				console.log(data)
 				localStorage.token=data.token
+				localStorage.userName=data.userName
 				dispatch(login(data.ok))
 				vm.props.history.push('/my')
 			}else {

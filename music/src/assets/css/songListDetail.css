@@ -29,7 +29,11 @@
 
      color:black;
  }
- .songListDetail input {
+ .songListDetail i {
      float: right;
-     color:red;
+     color:black;
+     font-size: 25px;
+ }
+ .songListDetail .detail{
+     overflow: auto;
  }

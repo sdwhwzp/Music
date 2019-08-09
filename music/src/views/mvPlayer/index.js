@@ -93,7 +93,7 @@ class Mv extends React.Component{
 		return(
 
 			<div className={"mv"}>
-				<a href="javascript:;" onClick={this.goback.bind(this)}>后退</a>
+				<a href="javascript:;" onClick={this.goback.bind(this)}>&lt;</a>
 				<video src={this.state.mvPlayer} controls={true} width={"100%"}></video>
 				{/*<Router>*/}
 				{/*	<NavLink exact={true} to={'/mvplayer/'+this.state.id}>详情</NavLink>*/}

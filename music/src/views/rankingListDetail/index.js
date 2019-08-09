@@ -31,7 +31,7 @@ class RankingListDetail extends React.Component{
                             return(
                                 <div key={i} className={"songList-list"}>
                                     <p className={"songname"}><span>{v.cur_count}</span>{v.data.albumname}</p>
-                                    {v.data.vid!==""?<input type="button" value={"mv"} style={{float:"right"}} onClick={this.mvPlayer.bind(this,v.data.vid)}/>:null}
+                                    {v.data.vid!==""?<i className={"icon iconfont icon-bofang1"}  onClick={this.mvPlayer.bind(this,v.data.vid)}></i>:null}
                                     <p className={"singerall"}>
                                         <b>{v.data.interval}%</b>
                                         {

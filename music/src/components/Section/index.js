@@ -12,7 +12,7 @@ class Section extends React.Component{
             <div className={'section'}>
                 <div className={'section-one'}>
                     <Router>
-                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}}  to={"/singer"}>
+                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}}  to={"/"}>
                             <span  className={'one'}  onClick={()=>{
                                 this.props.history.push('/singer')
                             }}>歌手</span>
@@ -26,6 +26,11 @@ class Section extends React.Component{
                             <span className={'two'}  onClick={()=>{
                                 this.props.history.push('/mvlist')
                             }}>MV</span>
+                        </NavLink>
+                        <NavLink exact style={{color:"gray"}} activeStyle={{color:"#31c27c"}} to={"/album"}>
+                            <span className={'two'} onClick={()=>{
+                                this.props.history.push('/album')
+                            }}>专辑</span>
                         </NavLink>
                     </Router>
                 </div>
