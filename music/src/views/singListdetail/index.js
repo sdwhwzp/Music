@@ -54,10 +54,14 @@ class SingListDetail extends React.Component {
 
 				}
 			}).then(({data})=>{
-				alert(data.msg)
-				this.setState({
-					color:data.color
-				})
+				if (data.ok === 1) {
+					alert(data.msg)
+				}else {
+					this.setState({
+						color:data.color
+					})
+				}
+
 			})
 		}else{
 			axios.delete('/music/collections',{
@@ -98,7 +102,7 @@ class SingListDetail extends React.Component {
 					</div>
 					{this.state.songList.map((v,i)=>{
 						return(
-							<li key={i}><a href="javascript:;"><div>{v.songname}</div>{v.singer[0].name}{v.vid!==""?
+							<li key={i}><a href="javascript:;" onClick={()=>this.props.history.push('/songplay/'+v.songmid)} ><div>{v.songname}</div>{v.singer[0].name}{v.vid!==""?
 								<i className={"icon iconfont icon-bofang1"}  onClick={this.mvPlayer.bind(this,v.vid)}></i>:null}</a></li>
 						)
 					})

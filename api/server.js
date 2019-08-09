@@ -551,9 +551,9 @@ app.get('/sing',function (req, res) {
     const {name,id,subtitle,token}=req.query
     if (jwt.decode(token).ok === -1) {
         res.json({
-            ok:1,
+            ok:-1,
             msg:"请登录",
-            color:"black"
+            color:"white"
         })
     }else {
         const userName = jwt.decode(token).info.adminName
@@ -576,7 +576,7 @@ app.delete('/sing',function (req, res) {
     const {id,token} =req.query
     if (jwt.decode(token).ok === -1) {
         res.json({
-            ok: 1,
+            ok: -1,
             msg: "请登录",
             color: "red"
         })
@@ -585,13 +585,13 @@ app.delete('/sing',function (req, res) {
         db.findOne(userName+"sing",{
             id
         },function (err, info) {
-            console.log(info)
+
 
             db.deleteOneById(userName+"sing",info._id,function (err) {
                 res.json({
                     ok:1,
                     msg:"取消收藏",
-                    color:"black"
+                    color:"white"
                 })
             })
 
@@ -603,11 +603,11 @@ app.get('/colorsing',function (req, res) {
     db.findOne(userName+"sing",{
         id
     },function (err, info) {
-        console.log(info)
-        if (info["0"] === undefined) {
+
+        if (info === null) {
             res.json({
-                ok:1,
-                color:"black"
+                ok:-1,
+                color:"white"
             })
         }else {
             res.json({

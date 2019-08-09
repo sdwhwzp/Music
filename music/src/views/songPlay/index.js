@@ -14,12 +14,29 @@ class SongPlay extends React.Component{
             pic:null,
             sel:0,
             getVid:[],
-            change:0
+            change:0,
+	        color:"white"
         }
     }
+	componentWillMount() {
+		axios.get('/music/colorsing',{
+			params:{
+				userName:localStorage.userName,
+				id:this.props.match.params.id
+			}
+		}).then(({data})=>{
+			console.log(data)
+			if (data.ok === -1) {
 
+			}else {
+				this.setState({
+					color:data.color
+				})
+			}
+		})
+	}
 
-    componentDidMount(){
+	componentDidMount(){
         axios.get(`/itool/song?id=${this.state.id}`)//获取歌手名字
             .then(({data}) => {
                 this.setState({
@@ -179,6 +196,48 @@ class SongPlay extends React.Component{
             })
         }
     }
+    collections(){
+		if (this.state.color === "white") {
+			axios.get('/itool/song',{
+				params:{
+					id:this.props.match.params.id
+				}
+			}).then(({data})=>{
+				axios.get('/music/sing',{
+					params:{
+						name:data.data[0].name,
+						id:this.props.match.params.id,
+						subtitle:data.data[0].subtitle,
+						token:localStorage.token
+					}
+				}).then(({data})=>{
+					console.log(data)
+					if (data.ok === -1) {
+						alert(data.msg)
+					}else {
+						this.setState({
+							color:data.color
+						})
+					}
+				})
+			})
+		}else{
+			axios.delete('/music/sing',{
+				params:{
+					token:localStorage.token,
+					id:this.props.match.params.id
+				}
+			}).then(({data})=>{
+				if (data.ok === -1) {
+					alert(data.msg)
+				}else {
+					this.setState({
+						color:data.color
+					})
+				}
+			})
+		}
+    }
     render(){
         return(
             <div className={"song-play"}>
@@ -199,6 +258,7 @@ class SongPlay extends React.Component{
                     <span>3:40</span>
                 </div>
                 <div className={"control"}>
+	                <a href="javascript:;" onClick={this.collections.bind(this)}><i style={{color:this.state.color}} className={"icon iconfont icon-aixin"} ></i></a>
                     <ul>
                         <li id={'pre'}  className={'icon iconfont icon-shangayishou'} onClick={this.jump.bind(this,'pre')}></li>
                         <li id={'change'} className={this.state.change===0?'icon iconfont icon-pcduanbizhixiazaicishutubiao':'icon iconfont icon-bofang2'} onClick={this.play.bind(this)}></li>
