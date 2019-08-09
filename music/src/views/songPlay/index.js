@@ -56,9 +56,9 @@ class SongPlay extends React.Component{
             getVid:JSON.parse(localStorage.getItem("getVid"))
         })
 
+
     }
     jump(type){
-
         if(type==='next'){
             this.state.getVid.map((v,i)=>{
                 if(this.state.id===v){
