@@ -13,7 +13,8 @@ class Search extends React.Component {
             isShow:true,
             click:"97%",
             value:"",
-            pageSize:5
+            pageSize:5,
+            display:"none"
         }
     }
 
@@ -34,11 +35,13 @@ class Search extends React.Component {
                     }}/>
                     <i className={"iconfont icon-RectangleCopy"}></i>
                 </div>
-                <div id={"searchResult"}>
+                <div id={"searchResult"} style={{display:this.state.display}}>
                     {
                         this.state.getSearchList.map((v, i) => {
                             return (
-                                <div key={i} className={"searchList"}>
+                                <div key={i} className={"searchList"}  onClick={()=>{
+                                    this.props.history.push("/songplay/"+v.songmid+"/"+v.singer[0].name)
+                                }}>
                                     <p>{v.albumname}</p>
                                     <p>
                                         {
@@ -60,7 +63,7 @@ class Search extends React.Component {
         )
     }
     componentDidMount() {
-        console.log(this);
+        // console.log(this);
         const me =this;
         PubSub.subscribe('get',function (msg,inputData) {
             console.log(8088,inputData);
@@ -79,7 +82,8 @@ class Search extends React.Component {
         });
         console.log(data);
         this.setState({
-            getSearchList: data.data.song.list
+            getSearchList: data.data.song.list,
+            display:"block"
         })
         // console.log(this.state.getSearchList)
         // window.localStorage.searchName=this.state.value;

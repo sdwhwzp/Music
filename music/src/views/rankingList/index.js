@@ -20,15 +20,15 @@ class RankingList extends React.Component{
                 {
                     this.state.topList.map((v,i)=>{
                         return(
-                            <div key={i} className={"rankingList_list"}>
-                                <img src={v.picUrl} alt="" onClick={()=>{
-                                    this.props.history.push({
-                                        pathname:"/rankingListDetail",
-                                        state:{
-                                            topid:v.id
-                                        }
-                                    })
-                                }}/>
+                            <div key={i} className={"rankingList_list"} onClick={()=>{
+                                this.props.history.push({
+                                    pathname:"/rankingListDetail",
+                                    state:{
+                                        topid:v.id
+                                    }
+                                })
+                            }}>
+                                <img src={v.picUrl} alt="" />
                                 <div className={"rankingList_intro"}>
                                     <p className={"topTitle"}>{v.topTitle}</p>
                                     <div>

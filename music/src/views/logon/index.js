@@ -48,7 +48,7 @@ class My extends React.Component {
 					<img src={[require("../../assets/img/logo.png")]} alt=""/>
 				</div>
 				<p>账号：<input ref={"userName"} type="text" placeholder={"请输入账号"}/></p>
-				<p>邮箱：<input ref={"mail"} type="email" placeholder={"请输入邮箱"}/> <input type="button" value={"发送验证码"} onClick={this.send.bind(this)}/></p>
+				<p>邮箱：<input ref={"mail"} type="email" placeholder={"请输入邮箱"}/> <input className={"button"} type="button" value={"发送验证码"} onClick={this.send.bind(this)}/></p>
 				<p>密码：<input ref={"password"} type="password" placeholder={"请输入密码"}/></p>
 				<p>确认密码：<input ref={"confirm"} type="password" placeholder={"请再次输入密码"} onBlur={this.confirm.bind(this)}/></p>
 				<p>验证码：<input ref={"code"} type="text" placeholder={"请输入验证码"}/></p>

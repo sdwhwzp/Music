@@ -3,9 +3,10 @@
     background: #eef;
 }
 
-#rankingList h3{
-    width: 100%;
+#rankingList>h3{
+    width: 96%;
     text-align: center;
+    margin:10px ;
 }
 #rankingList .rankingList_list{
     width: 92%;
@@ -26,14 +27,14 @@
 #rankingList .rankingList_list .rankingList_intro .topTitle{
     font-size:14px;
     font-weight: bold;
-    line-height: 20px;
-    height: 20px;
+    line-height: 25px;
+    height: 25px;
     padding-left: 5px;
 }
 #rankingList .rankingList_list .rankingList_intro .songList{
     font-size:6px;
-    height: 12px;
-    line-height: 12px;
+    height: 16px;
+    line-height: 16px;
     padding-left: 5px;
     color:#222;
     margin:2px;
@@ -55,10 +56,15 @@
     margin: 10px auto;
     margin-left: 25%;
 }
+#rankingListDetail .rankingListDetailHead>h3{
+    text-align: center;
+    margin: 25px;
+}
 #rankingListDetail .rankingListDetailHead>p{
     font-weight: bold;
     width: 100%;
     text-align: center;
+    margin-bottom: 10px;
 }
 #rankingListDetail .rankingListDetailList{
     width: 100%;
@@ -82,6 +88,7 @@
     padding-right: 5px;
     font-weight: normal;
     color:#333;
+    font-size: 10px;
 }
 #rankingListDetail .rankingListDetailList .songList-list .singerall .singer{
     margin: 3px;
@@ -97,4 +104,17 @@
 .songList-list i{
     float: right;
     font-size: 25px;
+}
+#rankingListDetail .rankingListDetail_bottom{
+    width: 96%;
+    margin:2%;
+}
+#rankingListDetail .rankingListDetail_bottom>h4{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal;
+}
+#rankingListDetail .rankingListDetail_bottom>div{
+    color:#999;
 }

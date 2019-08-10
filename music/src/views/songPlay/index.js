@@ -22,6 +22,7 @@ class SongPlay extends React.Component{
         }
     }
 	componentWillMount() {
+
 		axios.get('/music/colorsing',{
 			params:{
 				userName:localStorage.userName,
@@ -258,12 +259,15 @@ class SongPlay extends React.Component{
 					id:this.props.match.params.id
 				}
 			}).then(({data})=>{
+
 				axios.get('/music/sing',{
 					params:{
 						name:data.data[0].name,
 						id:this.props.match.params.id,
 						subtitle:data.data[0].subtitle,
-						token:localStorage.token
+						token:localStorage.token,
+						singerName:data.data[0].singer[0].name,
+						pic:this.state.pic
 					}
 				}).then(({data})=>{
 					console.log(data)

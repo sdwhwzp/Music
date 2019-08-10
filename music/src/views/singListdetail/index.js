@@ -54,7 +54,7 @@ class SingListDetail extends React.Component {
 
 				}
 			}).then(({data})=>{
-				if (data.ok === 1) {
+				if (data.ok === -1) {
 					alert(data.msg)
 				}else {
 					this.setState({
@@ -102,7 +102,7 @@ class SingListDetail extends React.Component {
 					</div>
 					{this.state.songList.map((v,i)=>{
 						return(
-							<li key={i}><a href="javascript:;" onClick={()=>this.props.history.push('/songplay/'+v.songmid)} ><div>{v.songname}</div>{v.singer[0].name}{v.vid!==""?
+							<li key={i}><a href="javascript:;" onClick={()=>this.props.history.push('/songplay/'+v.songmid+"/"+v.singer[0].name)} ><div>{v.songname}</div>{v.singer[0].name}{v.vid!==""?
 								<i className={"icon iconfont icon-bofang1"}  onClick={this.mvPlayer.bind(this,v.vid)}></i>:null}</a></li>
 						)
 					})

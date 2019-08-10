@@ -548,7 +548,7 @@ app.get('/collectionsList',function (req, res) {
 })
 app.get('/sing',function (req, res) {
 
-    const {name,id,subtitle,token}=req.query
+    const {name,id,subtitle,token,singerName}=req.query
     if (jwt.decode(token).ok === -1) {
         res.json({
             ok:-1,
@@ -561,6 +561,7 @@ app.get('/sing',function (req, res) {
             name,
             id,
             subtitle,
+            singerName,
             addTime:Date.now()
         },function (err) {
             res.json({
