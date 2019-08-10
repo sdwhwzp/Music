@@ -98,7 +98,6 @@ class SongList extends React.Component{
                                 {
                                     this.state.songList.map((v,i)=>{
                                         return(
-
                                             <li key={i} className={i==this.state.sel?'sel':""} >
                                                 <h1 ref={i} onClick={this.song.bind(this,v,i)}>{v.songname}</h1>
                                                 <p><span>{this.props.match.params.name}</span>  ·  <span>{v.albumname}</span></p>

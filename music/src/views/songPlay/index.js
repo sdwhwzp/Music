@@ -2,6 +2,7 @@ import React from "react"
 import {withRouter} from 'react-router-dom'
 import PubSub from 'pubsub-js'
 import axios from 'axios'
+import getTime from '../../common/getTime'//封装一个将秒数转化为分钟：秒的形式的函数
 import getVid from "../../common/getVid/index";
 class SongPlay extends React.Component{
     constructor(props){
@@ -15,7 +16,9 @@ class SongPlay extends React.Component{
             sel:0,
             getVid:[],
             change:0,
-	        color:"white"
+	        color:"white",
+            duration:0,
+            playLeft:0
         }
     }
 	componentWillMount() {
@@ -74,7 +77,14 @@ class SongPlay extends React.Component{
         this.setState({
             getVid:JSON.parse(localStorage.getItem("getVid"))
         })
+        setTimeout(()=>{
+            let audio = this.refs.audio
+            let str = getTime(audio.duration)
 
+            this.setState({
+                duration : str
+            })
+        },500)
 
     }
     jump(type){
@@ -126,7 +136,14 @@ class SongPlay extends React.Component{
                     img.style.height='300px'
                 }
             },1000)
+            setTimeout(()=>{
+                let audio = this.refs.audio
+                let str = getTime(audio.duration)
 
+                this.setState({
+                    duration : str
+                })
+            },500)
         }else {
             this.state.getVid.map((v, i) => {
                 if (this.state.id === v) {
@@ -177,13 +194,18 @@ class SongPlay extends React.Component{
                 }
             }, 1000)
         }
+        setTimeout(()=>{
+            let audio = this.refs.audio
+            let str = getTime(audio.duration)
 
+            this.setState({
+                duration : str
+            })
+        },500)
 
     }
-
     play(){
         let audio=this.refs.audio
-        console.log(audio.__proto__)
         if(audio.paused){
             audio.play()
             this.setState({
@@ -195,6 +217,39 @@ class SongPlay extends React.Component{
                 change:1
             })
         }
+    }
+    watch(){
+            let audio = this.refs.audio
+            let str = getTime(audio.currentTime)
+            this.refs.start.innerHTML=str
+            let loading=this.refs.songwidth
+            // console.log(audio.currentTime,audio.duration)
+            this.setState({
+                playLeft:(audio.currentTime/audio.duration)*223
+            })
+            loading.style.width=(audio.currentTime/audio.duration)*223+"px"
+            this.setState({
+                loading:loading
+            })
+    }
+    setTime(e){
+            const len = this.refs.loading.clientWidth / 24;
+            // 将整个进度条分为24份
+            const windowWidth = window.innerWidth - this.refs.loading.clientWidth - this.refs.loading.offsetLeft - 20;
+            let lineWidth;
+            if (windowWidth > 240) {
+                // 当导航显示时，计算整个滑块的宽度要减去导航的宽度240px
+                lineWidth = e.pageX - this.refs.loading.offsetLeft - 240;
+            } else {
+                lineWidth = e.pageX - this.refs.loading.offsetLeft;
+            }
+            // 将最终的滑块宽度按百分比进行转换
+            const innerWidth = Math.round(lineWidth / len);
+            this.refs.songwidth.style.width = 100 / 24 * innerWidth + '%';
+            let newWidth=100 / 24 * innerWidth/100;
+
+            let audio = this.refs.audio
+            audio.currentTime = newWidth*audio.duration
     }
     collections(){
 		if (this.state.color === "white") {
@@ -246,16 +301,20 @@ class SongPlay extends React.Component{
                     <p style={{textAlign:'center',fontSize:"14px",height:'50px',lineHeight:'50px'}}>—  {this.state.singer}  —</p>
                 </div>
                 {this.state.sel===0?<div className={"pic"} style={{height:'300px'}}>
-                    <img id={'img'} ref={"pic"} src={this.state.pic} alt="" />
+                    <img id={'img'} className={this.state.change===0?'an':""} ref={"pic"} src={this.state.pic} alt="" />
                 </div>:<div className={"word"}>歌词</div>}
                 <div className={"play"}>
-                    <audio autoplay="autoplay"  src={this.state.song} controls={"controls"} ref={"audio"}></audio>
+                    <audio autoPlay="autoplay"  src={this.state.song} controls={"controls"} ref={"audio"} onTimeUpdate={this.watch.bind(this)} onEnded={()=>{
+                        if(this.refs.audio.ended){
+                            this.jump('next')
+                        }
+                    }}></audio>
                     <br/>
-                    <span>1:56</span>
-                    <div className={"loading"} ref={'loading'}>
-                        <div className={"inline-loading"} ref={'inline-loading'}></div>
+                    <span ref={'start'}>0:00</span>
+                    <div className={"loading"} ref={'loading'} onClick={this.setTime.bind(this)} >
+                        <div className={"inline-loading"} ref={'songwidth'}></div>
                     </div>
-                    <span>3:40</span>
+                    <span>{this.state.duration}</span>
                 </div>
                 <div className={"control"}>
 	                <a href="javascript:;" onClick={this.collections.bind(this)}><i style={{color:this.state.color}} className={"icon iconfont icon-aixin"} ></i></a>
