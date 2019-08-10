@@ -24,7 +24,7 @@ import axios from 'axios'
 
 			})
 			this.props.getSingListTwo(function (state) {
-				console.log(state)
+				// console.log(state)
 				_me.setState({
 					singListtwo:state.singList
 				})
