@@ -8,6 +8,7 @@
     "babel-plugin-import": "^1.12.0",
     "better-scroll": "^1.15.2",
     "http-proxy-middleware": "^0.19.1",
+    "lyric-parser": "^1.0.1",
     "mongodb": "^3.3.0-beta2",
     "prop-types": "^15.7.2",
     "pubsub-js": "^1.7.0",
