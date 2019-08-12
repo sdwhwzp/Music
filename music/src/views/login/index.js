@@ -5,7 +5,7 @@ import  {withRouter} from 'react-router-dom'
 		super(props)
 	}
 	componentWillMount() {
-		console.log(this.props,555)
+		// console.log(this.props,555)
 	}
 
 	 goback(){

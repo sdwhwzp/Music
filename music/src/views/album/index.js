@@ -58,7 +58,7 @@ class Album extends React.Component{
     componentDidMount() {
         axios.get("/qq/v8/fcg-bin/album_library?format=json&cmd=firstpage&page=0&pagesize=20&sort=1&language=-1&genre=0&year=1&pay=0&type=-1&company=-1")
             .then(({data})=>{
-                console.log(88888,data);
+                // console.log(88888,data);
                 this.setState({
                     data:data,
                     albumlist:data.data.albumlist
@@ -66,7 +66,7 @@ class Album extends React.Component{
             });
         axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?&format=json")
             .then(({data})=>{
-                console.log(2,data)
+                // console.log(2,data)
                 this.setState({
                     slider:data.data.slider
                 })

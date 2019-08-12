@@ -17,7 +17,7 @@ class Mylist extends React.Component{
 		axios.get('music/mysing',{params:{
 				userName:localStorage.userName
 			}}).then(({data})=>{
-			console.log(data)
+			// console.log(data)
 			this.setState({
 				data:data,
 				info:data.info

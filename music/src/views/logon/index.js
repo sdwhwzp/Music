@@ -25,7 +25,7 @@ class My extends React.Component {
 		}
 	}
 	logon(){
-		console.log(this.refs.mail.value)
+		// console.log(this.refs.mail.value)
 		axios.post('/music/logon',{
 			adminName:this.refs.userName.value,
 			passWord:this.refs.confirm.value,

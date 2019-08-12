@@ -70,7 +70,7 @@ class RankingListDetail extends React.Component{
         })
             .then(({data})=>{
                 // console.log(33,this);
-                console.log(data);
+                // console.log(data);
                 this.setState({
                     data:data,
                     songList:data.songlist,

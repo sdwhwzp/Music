@@ -33,7 +33,7 @@ class SongPlay extends React.Component{
 				id:this.props.match.params.id
 			}
 		}).then(({data})=>{
-			console.log(data)
+			// console.log(data)
 			if (data.ok === -1) {
 
 			}else {
@@ -143,7 +143,7 @@ class SongPlay extends React.Component{
                                 })
                                 this.lyric.play()
                                 let arr=this.lyric.lines
-                                console.log()
+                                // console.log()
                                 this.setState({
                                     arr1:arr
                                 })
@@ -213,7 +213,7 @@ class SongPlay extends React.Component{
                                 })
                                 this.lyric.play()
                                 let arr=this.lyric.lines
-                                console.log()
+                                // console.log()
                                 this.setState({
                                     arr1:arr
                                 })
@@ -319,7 +319,7 @@ class SongPlay extends React.Component{
 						pic:this.state.pic
 					}
 				}).then(({data})=>{
-					console.log(data)
+					// console.log(data)
 					if (data.ok === -1) {
 						alert(data.msg)
 					}else {

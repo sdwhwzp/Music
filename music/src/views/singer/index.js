@@ -25,7 +25,7 @@ class Singer extends React.Component {
                 this.setState({
                     ListSinger: data.data.list,
                 },()=>{
-                    console.log(this.state.ListSinger)
+                    // console.log(this.state.ListSinger)
                     this.setState({
                         nameList:getState(this.state)
                     })

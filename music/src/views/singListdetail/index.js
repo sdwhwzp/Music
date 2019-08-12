@@ -21,7 +21,7 @@ class SingListDetail extends React.Component {
 		let _me =this;
 		// console.log(this.props.match.params.dissid);
 		this.props.getSingListDetail(this.props.match.params.dissid,function (state) {
-				console.log(state.singList[0],555)
+				// console.log(state.singList[0],555)
 			var reg = new RegExp("&#8226;");
 			_me.setState({
 				singListTitle:state.singList[0].dissname.replace(reg,""),
@@ -83,7 +83,7 @@ class SingListDetail extends React.Component {
 
 	}
 	render(){
-		console.log(this.state.songList,111)
+		// console.log(this.state.songList,111)
 		return(
 
 			<div className={"songListDetail"}>

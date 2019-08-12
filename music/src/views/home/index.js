@@ -78,7 +78,7 @@ import 'swiper/dist/css/swiper.min.css'
 		axios.get("/qq/v8/fcg-bin/fcg_v8_toplist_cp.fcg?pageNo="+pageIndex+"&topid=27")
 
 			.then(({data})=>{
-				console.log(data);
+				// console.log(data);
 				this.setState({
 					songlist:data.songlist
 				})

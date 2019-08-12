@@ -18,13 +18,13 @@ class Songlist extends React.Component{
 				userName:localStorage.userName
 			}
 		}).then(({data})=>{
-			console.log(data)
+			// console.log(data)
 			if (data.ok === -1) {
 				this.setState({
 					msg:data.msg
 				})
 			}else {
-				console.log(data.info,222)
+				// console.log(data.info,222)
 				this.setState({
 					songList:data.info
 				})

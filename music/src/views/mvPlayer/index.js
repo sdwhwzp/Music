@@ -32,7 +32,7 @@ class Mv extends React.Component{
 
 		})
 		this.props.getMvDiscuss(id,this.state.pageSize,function (state) {
-			console.log(state.mv.mvDiscuss)
+			// console.log(state.mv.mvDiscuss)
 			let mvDiscuss
 			if (state.mv.mvDiscuss === undefined) {
 				mvDiscuss=[]
@@ -47,7 +47,7 @@ class Mv extends React.Component{
 		this.props.getMvDetail(id,function (state) {
 			// console.log(state.mv.mvDetail[id],222)
 			let singers
-			console.log(state.mv.mvDetail[id].singers["0"])
+			// console.log(state.mv.mvDetail[id].singers["0"])
 			if (state.mv.mvDetail[id].singers["0"]===undefined) {
 				singers="该MV已下架"
 			}else {
