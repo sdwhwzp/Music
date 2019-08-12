@@ -643,6 +643,79 @@ app.get('/Mysing',function (req, res) {
 
     })
 })
-app.listen(80,function () {
+app.get('/url',function (req, res) {
+    const id =req.query.id
+    const quality = req.query.quality
+    const isRdeirect= req.query.isRdeirect
+    sing.sing(id,quality,isRdeirect,function (data) {
+        res.json(data)
+    })
+})
+app.get('/song',function (req, res) {
+    const id =req.query.id
+
+    sing.song(id,function (data) {
+        res.json(data)
+    })
+})
+app.get('/lrc',function (req, res) {
+    const id =req.query.id
+
+    sing.lrc(id,function (data) {
+        res.json(data)
+    })
+})
+app.get('/pic',function (req, res) {
+    const id =req.query.id
+    const isRedirect =req.query.isRedirect
+    sing.pic(id,isRedirect,function (data) {
+        res.json(data)
+    })
+})
+app.get('/mv',function (req, res) {
+    const id =req.query.id
+
+    sing.mv(id,function (data) {
+        res.json(data)
+    })
+})
+app.get('/mvUrl',function (req, res) {
+    const id =req.query.id
+    const  quality=req.query.quality
+    sing.mvulr(id,quality,function (data) {
+        res.json(data)
+    })
+})
+app.get('/mv/hot',function (req, res) {
+    const pageSize=req.query.pageSize
+    const page=req.query.page
+    sing.mvhot(pageSize,page,function (data) {
+        res.json(data)
+    })
+})
+app.get('/comment/mv',function (req, res) {
+    const id =req.query.id
+    const pageSize=req.query.pageSize
+    const page=req.query.page
+    sing.mvcommond(id,pageSize,page,function (data) {
+        res.json(data)
+    })
+})
+app.get('/album',function (req, res) {
+    const id =req.query.id
+    const pageSize=req.query.pageSize
+    const page=req.query.page
+    sing.album(id,pageSize,page,function (data) {
+        res.json(data)
+    })
+})
+app.get('/banner',function (req, res) {
+
+    sing.banner(function (data) {
+        res.json(data)
+    })
+})
+
+app.listen(8087,function () {
     console.log("success")
 })

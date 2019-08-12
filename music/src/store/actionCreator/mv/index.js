@@ -28,13 +28,13 @@ export const getMvDiscuss =function (playload) {
 }
 export default {
 	getMvlist(dispatch,pageSize,cb){
-		axios.get("/itool/mv/hot",{
+		axios.get("/itool/mv/hothot",{
 			params:{
 				pageSize,
 				page:1
 			}
 		}).then(({data})=>{
-
+			console.log(data)
 			dispatch(getMvlist(data.data.list))
 			let state = store.getState();
 
@@ -61,9 +61,8 @@ export default {
 			params:{
 				id
 			}
-
 		}).then(({data})=>{
-
+			console.log(data)
 			dispatch(getMvDetail(data.data))
 			let state = store.getState();
 

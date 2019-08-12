@@ -15,7 +15,7 @@ module.exports = function (app) {
         }
     }))
 	app.use("/itool",proxy({
-		target:"https://v1.itooi.cn/tencent",
+		target:"http://59.110.242.233:8087",
 		changeOrigin:true,
 		pathRewrite:{
 			"^/itool":""

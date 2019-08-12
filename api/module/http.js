@@ -38,3 +38,103 @@ module.exports.singListtwo=function(cb){
 			cb(data)
 		})
 }
+module.exports.mvcommond=function (id, page = 0, pageSize = 30, cb) {
+	axios.get('https://v1.itooi.cn/tencent/comment/mv',{
+		params: {
+			id,
+
+			pageSize,
+			page
+		}
+	}).then(({data})=>{
+		cb(data)
+	})
+}
+module.exports.mvulr=function (id,quality=1080, cb) {
+	axios.get('https://v1.itooi.cn/tencent/mvUrl',{
+		params: {
+			id,
+			quality,
+			isRedirect:0
+		}
+	}).then(({data})=>{
+		cb(data)
+	})
+}
+module.exports.mvhot=function (pageSize=100,page=0, cb) {
+	axios.get('https://v1.itooi.cn/tencent/mv/hot',{
+		params: {
+			pageSize,
+			page
+		}
+	}).then(({data})=>{
+		cb(data)
+	})
+}
+module.exports.mv=function (id, cb) {
+	axios.get('https://v1.itooi.cn/tencent/mv',{
+		params: {
+			id,
+		}
+	}).then(({data})=>{
+		cb(data)
+	})
+}
+module.exports.sing=function (id, quality=128,isRedirect=0,cb) {
+		axios.get('https://v1.itooi.cn/tencent/url',{
+			params: {
+				id,
+				quality,
+				isRedirect
+			}
+		}).then(({data})=>{
+			cb(data)
+		})
+}
+module.exports.pic=function (id,isRedirect=0,cb) {
+	axios.get('https://v1.itooi.cn/tencent/pic', {
+		params: {
+			id,
+			isRedirect
+		}
+	}).then(({data}) => {
+		cb(data)
+	})
+}
+module.exports.lrc=function (id,cb) {
+	axios.get('https://v1.itooi.cn/tencent/lrc', {
+		params: {
+			id,
+		}
+	}).then(({data}) => {
+		cb(data)
+	})
+}
+module.exports.song=function (id,cb) {
+	axios.get('https://v1.itooi.cn/tencent/song', {
+		params: {
+			id,
+		}
+	}).then(({data}) => {
+		cb(data)
+	})
+}
+module.exports.album=function (id, page = 0, pageSize = 30, cb) {
+	axios.get('https://v1.itooi.cn/tencent/comment/album',{
+		params: {
+			id,
+
+			pageSize,
+			page
+		}
+	}).then(({data})=>{
+		cb(data)
+	})
+}
+module.exports.banner=function(cb){
+	axios.get('https://v1.itooi.cn/tencent/banner',{
+	})
+		.then(({data})=>{
+			cb(data)
+		})
+}
