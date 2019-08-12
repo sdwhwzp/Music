@@ -25,7 +25,7 @@ export default {
 		}).then(({data})=>{
 			if (data.ok === 1) {
 				alert(data.msg)
-				console.log(data)
+				// console.log(data)
 				localStorage.token=data.token
 				localStorage.userName=data.userName
 				dispatch(login(data.ok))

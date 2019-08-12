@@ -25,7 +25,7 @@ export default {
 	getSingListTwo(dispatch,cb){
 		axios.get('/music/singListtwo')
 			.then(({data})=>{
-				console.log(data.data.list)
+				// console.log(data.data.list)
 				dispatch(singList(data.data.list))
 				let state = store.getState();
 				cb(state)

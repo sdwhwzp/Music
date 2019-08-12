@@ -9,7 +9,7 @@ import Components from "../../components";
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
 
- class Home extends React.Component {
+class Home extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={
@@ -24,7 +24,6 @@ import 'swiper/dist/css/swiper.min.css'
 	render(){
 		return(
 			<div >
-
 				<Components.Section></Components.Section>
 				<div className="swiper-container" style={{marginTop:"110px"}}>
 					<div className="swiper-wrapper">
@@ -42,43 +41,41 @@ import 'swiper/dist/css/swiper.min.css'
 					</div>
 					<div className='swiper-pagination' ></div>
 				</div>
-
 				<div className={'section-three'}>
 					{
 						this.state.songlist.map((item,index)=>{
 							return(
-								<div key={item.cur_count}>
-									<h3>{item.cur_count}:{item.data.albumname}</h3>
-									<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}
-									{
-										item.data.singer.map((item,index)=>{
-											return(
-												<div key={item.id} className={'sin'}>
-													歌手：{item.name}
-												</div>
-											)
-										})
-									}
+								<div className={'section-count'}key={index}>
+									<div  key={item.cur_count} onClick={()=>{this.props.history.push("/songplay/"+item.data.songmid+"/"+item.data.singer[0].name)}}>
+										<h3>{item.cur_count}:{item.data.albumname}</h3>
+										<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}
+											{item.data.songname}
+											{
+												item.data.singer.map((item,index)=>{
+													return(
+														<div key={item.id} className={'sin'}>
+															歌手：{item.name}:
+														</div>
+													)
+												})
+											}
 									</span>
+									</div>
 								</div>
+
 							)
 						})
 					}
-					{/*<img src={require("../../assets/img/logo-nav.png")} height={'24px'} width={'82px'} alt=""/>*/}
-					{/*<p>@QQ音乐版权所有</p>*/}
-
-
 				</div>
-
 			</div>
 		)
 	}
 
 	getListMore(pageIndex=1){
-		axios.get("/qq/v8/fcg-bin/fcg_v8_toplist_cp.fcg?pageNo="+pageIndex+"&topid=27")
-
+		// console.log(11,this.props)
+		axios.get("/qq/v8/fcg-bin/fcg_v8_toplist_cp.fcg?pageNo=123456&topid=27")
 			.then(({data})=>{
-				// console.log(data);
+
 				this.setState({
 					songlist:data.songlist
 				})

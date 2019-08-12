@@ -11,7 +11,9 @@ class Album extends React.Component{
         this.state={
             albumlist:[],
             slider:[],
-            data:[]
+            data:[],
+            singers:[],
+            tag:[]
 
         }
     }
@@ -33,19 +35,20 @@ class Album extends React.Component{
                                                 slider:v.id
                                             }
                                         })
-                                    }} alt=""/>
-                                    <a className={"albumName"} href="" alt="">
-                                        {/*{*/}
-                                        {/*    this.state.albumlist.map((v,i)=>{*/}
-                                        {/*        return(*/}
-                                        {/*            <div key={i}>*/}
-                                        {/*                {v.album_name}*/}
-                                        {/*            </div>*/}
-                                        {/*        )*/}
-                                        {/*    })*/}
-                                        {/*}*/}
+
+                                    }}  alt=""/>
+                                    <a className={"albumName"} href="" alt=""> 福茂唱片
+                                        {
+                                            this.state.tag.map((v,i)=>{
+                                                return(
+                                                    <div key={i}>
+                                                        {v.sum}
+                                                    </div>
+                                                )
+                                            })
+                                        }
                                         {/*{this.state.data.company.name}*/}
-                                    <p className={"albumTitle"}>{this.state.data.Falbum_desc}</p>/\
+                                        <p className={"albumTitle"}>{this.state.data.Falbum_desc}</p>
                                     </a>
                                 </div>
                             </div>

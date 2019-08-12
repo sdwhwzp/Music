@@ -34,7 +34,7 @@ class RankingListDetail extends React.Component{
                             // console.log(v)
                             return(
                                 <div key={i} className={"songList-list"} >
-                                    <p className={"songname"} onClick={()=>this.props.history.push('/songplay/'+v.data.songmid+"/"+v.data.singer[0].name)}><span>{v.cur_count}</span>{v.data.albumname}</p>
+                                    <p className={"songname"} onClick={()=>this.props.history.push('/songplay/'+v.data.songmid+"/"+v.data.singer[0].name)}><span>{i+1}</span>{v.data.albumname}</p>
                                     {v.data.vid!==""?<i className={"icon iconfont icon-bofang1"}  onClick={this.mvPlayer.bind(this,v.data.vid)}></i>:null}
                                     <p className={"singerall"}>
                                         <b>{v.data.interval}%</b>
