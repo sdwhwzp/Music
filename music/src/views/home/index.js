@@ -41,7 +41,6 @@ class Home extends React.Component {
 					</div>
 					<div className='swiper-pagination' ></div>
 				</div>
-
 				<div className={'section-three'}>
 					{
 						this.state.songlist.map((item,index)=>{
@@ -51,7 +50,6 @@ class Home extends React.Component {
 										<h3>{item.cur_count}:{item.data.albumname}</h3>
 										<span  className={'three'}>{item.data.interval}%:{item.data.albumdesc}
 											{item.data.songname}
-											{/*{item.data.singer[0].mid}*/}
 											{
 												item.data.singer.map((item,index)=>{
 													return(
@@ -68,12 +66,7 @@ class Home extends React.Component {
 							)
 						})
 					}
-					{/*<img src={require("../../assets/img/logo-nav.png")} height={'24px'} width={'82px'} alt=""/>*/}
-					{/*<p>@QQ音乐版权所有</p>*/}
-
-
 				</div>
-
 			</div>
 		)
 	}

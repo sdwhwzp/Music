@@ -25,15 +25,6 @@ class AlbumDetail extends React.Component {
     //     })
     // }
 
-    // moreList(){
-    //     // const _me=this
-    //     this.state.pageSize=this.state.pageSize+5
-    //     this.props.getAlbumDetail(this.state.pageSize,function (state) {
-    //         this.setState({
-    //             albumDetail:state.album.albumDetail
-    //         })
-    //     })
-    // }
     // getmyPlayer(){
     //
     //     // alert("请登录！")
@@ -46,9 +37,6 @@ class AlbumDetail extends React.Component {
                 <p className={"iconfont icon-navbankicon"} onClick={() => {
                     this.props.history.go(-1)
                 }}></p>
-                {/*<img className={"albumDetailHead"} height={'300px'} src={this.state.data.headPic} alt=""/>*/}
-                {/*<i className={"icon iconfont icon-bofang2"} ></i>*/}
-
                 <div className={"albumDetailHead"}>
                     {
                         this.state.slider.map((v, i) => {
@@ -94,7 +82,6 @@ class AlbumDetail extends React.Component {
             </div>
         )
     }
-
     componentDidMount() {
         // this.getmyPlayer();
         // console.log(11,this.props.location)
