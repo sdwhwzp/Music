@@ -11,7 +11,9 @@ class Album extends React.Component{
         this.state={
             albumlist:[],
             slider:[],
-            data:[]
+            data:[],
+            singers:[],
+            tag:[]
 
         }
     }
@@ -33,19 +35,20 @@ class Album extends React.Component{
                                                 slider:v.id
                                             }
                                         })
-                                    }} alt=""/>
-                                    <a className={"albumName"} href="" alt="">
-                                        {/*{*/}
-                                        {/*    this.state.albumlist.map((v,i)=>{*/}
-                                        {/*        return(*/}
-                                        {/*            <div key={i}>*/}
-                                        {/*                {v.album_name}*/}
-                                        {/*            </div>*/}
-                                        {/*        )*/}
-                                        {/*    })*/}
-                                        {/*}*/}
+
+                                    }}  alt=""/>
+                                    <a className={"albumName"} href="" alt=""> 福茂唱片
+                                        {
+                                            this.state.tag.map((v,i)=>{
+                                                return(
+                                                    <div key={i}>
+                                                        {v.sum}
+                                                    </div>
+                                                )
+                                            })
+                                        }
                                         {/*{this.state.data.company.name}*/}
-                                    <p className={"albumTitle"}>{this.state.data.Falbum_desc}</p>/\
+                                        <p className={"albumTitle"}>{this.state.data.Falbum_desc}</p>
                                     </a>
                                 </div>
                             </div>
@@ -58,7 +61,7 @@ class Album extends React.Component{
     componentDidMount() {
         axios.get("/qq/v8/fcg-bin/album_library?format=json&cmd=firstpage&page=0&pagesize=20&sort=1&language=-1&genre=0&year=1&pay=0&type=-1&company=-1")
             .then(({data})=>{
-                console.log(88888,data);
+                // console.log(88888,data);
                 this.setState({
                     data:data,
                     albumlist:data.data.albumlist
@@ -66,7 +69,7 @@ class Album extends React.Component{
             });
         axios.get("/qq/musichall/fcgi-bin/fcg_yqqhomepagerecommend.fcg?&format=json")
             .then(({data})=>{
-                console.log(2,data)
+                // console.log(2,data)
                 this.setState({
                     slider:data.data.slider
                 })
